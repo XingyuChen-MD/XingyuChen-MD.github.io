@@ -166,68 +166,74 @@
 									</header>
 
 									<!-- Research Rotations Snippet (with extra gap between bullet and text) -->
+
+<!-- Research Experience Section (consistent bullet spacing) -->
 <style>
-  .rotation-title {
-    margin: 0 0 0.4rem 0;
+  /* Headings */
+  .experience-title {
+    margin: 2rem 0 0.6rem 0;
     font-family: "Inter", sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
   }
 
-  /* UL styling */
-  .rotation-list {
-    margin: 0 0 1rem 1.5rem;   /* overall left offset */
-    padding: 0 0 0 0.4rem;      /* add inner padding so marker is separated */
-    list-style: disc;
-    list-style-position: outside; /* ensures marker sits outside the text block */
+  /* Universal list styling for all experience bullets */
+  .experience-list {
+    /* horizontal indent so bullet sits outside text block */
+    margin: 0 0 1rem 1.5rem;
+    /* extra padding so there is visible gap between bullet • and first character */
+    padding-left: 0.4rem;
+    list-style: disc outside;
     font-size: 0.95rem;
     line-height: 1.5;
   }
 
-  /* LI spacing */
-  .rotation-list li {
+  .experience-list li {
+    /* vertical gap between bullet rows */
     margin-bottom: 0.35rem;
-    padding-left: 0.25rem;       /* extra gap between bullet and text */
+    /* horizontal gap between bullet glyph and text */
+    padding-left: 0.25rem;
   }
 
-  .rotation-list strong {
+  /* optional accent color */
+  .experience-list strong {
     color: var(--accent-color, #0052cc);
   }
 </style>
 
-<div class="rotation-section">
-  <h4 class="rotation-title">Research Rotations — Johns Hopkins University (2024)</h4>
-  <ul class="rotation-list">
+<div class="experience-section">
+  <!-- Rotations -->
+  <h4 class="experience-title">Research Rotations — Johns Hopkins University (2024)</h4>
+  <ul class="experience-list">
     <li><strong>Clone‑based WGS</strong> maps sub‑clonal CNVs under Dr.&nbsp;Rajiv&nbsp;McCoy.</li>
     <li><strong>DNA language models</strong> gain speed and accuracy with k‑mer deduplication under Dr.&nbsp;Michael&nbsp;Schatz.</li>
     <li><strong>Retinal organoid atlas</strong> integrates snRNA‑seq to reveal developmental gaps under Dr.&nbsp;Bob&nbsp;Johnston.</li>
     <li><strong>Seq‑to‑function PRS</strong> boosts gene‑trait prediction via fine‑tuned CNNs under Dr.&nbsp;Alexis&nbsp;Battle.</li>
   </ul>
-</div>
 
-									
-									<h4>Research Bioinformatician I — Cedars-Sinai Medical Center (2022–2024)</h4>
-									<ul>
-										<li>Led 4 independent bioinformatics projects on tumor evolution, immunotherapy biomarkers, and spatial proteomics</li>
-										<li>Supervised 2 junior scientists, collaborated across 6 labs, and delivered project-critical analyses supporting NIH-funded grants</li>
-										<li>Published high-impact findings, including a <i>Nature</i> paper on Y chromosome loss and immune evasion in bladder cancer</li>
-									</ul>
-									
-									<h4>Research Associate I & Visiting Graduate Student — Cedars-Sinai Medical Center (2021–2022)</h4>
-									<ul>
-										<li>Integrated RNA-seq, ATAC-seq, and single-cell data to explore tumor microenvironment landscapes</li>
-										<li>Contributed to radiogenomics and multi-modal cancer staging using AI-enhanced MRI and RNA-seq datasets</li>
-										<li>Co-first author on 3 peer-reviewed publications during this period</li>
-									</ul>
-									
-									<h4>Early Researcher — Third Xiangya Hospital, Central South University (2020–2021)</h4>
-									<ul>
-										<li>Conducted immunogenomic analyses on clinical samples from bladder and ovarian cancer patients</li>
-										<li>Initiated development of PyroScore and IMS scoring systems, which became key predictive models in later publications</li>
-									</ul>
-									
-								</div>
-							</section>
+  <!-- Bioinformatician I -->
+  <h4 class="experience-title">Research Bioinformatician I — Cedars‑Sinai Medical Center (2022–2024)</h4>
+  <ul class="experience-list">
+    <li>Led four independent bioinformatics projects on tumor evolution, immunotherapy biomarkers, and spatial proteomics.</li>
+    <li>Supervised two junior scientists, collaborated across six labs, and delivered analyses supporting NIH‑funded grants.</li>
+    <li>Published high‑impact findings, including a <em>Nature</em> paper on Y‑chromosome loss and immune evasion in bladder cancer.</li>
+  </ul>
+
+  <!-- Research Associate & Visiting Grad Student -->
+  <h4 class="experience-title">Research Associate I &amp; Visiting Graduate Student — Cedars‑Sinai Medical Center (2021–2022)</h4>
+  <ul class="experience-list">
+    <li>Integrated RNA‑seq, ATAC‑seq, and single‑cell data to explore tumor microenvironment landscapes.</li>
+    <li>Contributed to radiogenomics and multi‑modal cancer staging using AI‑enhanced MRI and RNA‑seq datasets.</li>
+    <li>Co‑first author on three peer‑reviewed publications during this period.</li>
+  </ul>
+
+  <!-- Early Researcher -->
+  <h4 class="experience-title">Early Researcher — Third Xiangya Hospital, Central South University (2020–2021)</h4>
+  <ul class="experience-list">
+    <li>Conducted immunogenomic analyses on clinical samples from bladder and ovarian cancer patients.</li>
+    <li>Initiated development of PyroScore and IMS scoring systems, which became key predictive models in later publications.</li>
+  </ul>
+</div>
 
 						<!-- Academic CV -->
 							<section id="cv">
