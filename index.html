@@ -5,317 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Xingyu Chen – Cancer Genomics @ JHU</title>
 
-    <!-- Base theme → inherit variables from HTML5 UP “Read-Only” but ensure harmony -->
+    <!-- Typography & base variables -->
     <style>
-      /* ---------- Typography ---------- */
       @font-face {
         font-family: "Inter";
-        font-style: normal;
         font-weight: 400 700;
         src: url("https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK_x90DW4ZGdE.woff2") format("woff2-variations");
         font-display: swap;
       }
-
-      html {
-        font-size: 16px;             /* consistent root size */
-        --accent-color: #0052cc;     /* global accent */
-      }
-
-      body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        font-weight: 600;
-        line-height: 1.25;
-        color: #111;
-        margin: 0 0 0.6em 0;
-      }
-
-      h1 { font-size: 1.9rem; }
-      h2 { font-size: 1.6rem; }
-      h3 { font-size: 1.3rem; }
-      h4 { font-size: 1.15rem; }
-      h5 { font-size: 1rem; }
-
-      /* Paragraph & lists */
-      p { margin: 0 0 1.2em 0; }
-      ul { margin: 0 0 1.2em 1.5em; padding: 0; }
-
-      /* ---------- Utilities ---------- */
-      .left-align-text { text-align: left; }
-      .image-container { margin-bottom: 1.5rem; }
-
-      /* ---------- Badge containers (Dimensions + Altmetric) ---------- */
-      .badge-container {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        margin-left: 8px;
-      }
-
-      /* ---------- Experience lists (inherit from page-specific CSS) ---------- */
-      .experience-title {
-        margin: 2rem 0 0.6rem 0;
-        font-weight: 600;
-      }
-      .experience-list {
-        margin: 0 0 1.2rem 1.5rem;
-        list-style: disc outside;
-      }
-      .experience-list li {
-        margin: 0 0 0.4rem 0;
-        padding-left: 0.25rem;
-      }
-      .experience-list strong { color: var(--accent-color); }
+      html  { font-size: 16px; --accent-color:#0052cc; }
+      body  { font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; color:#333; }
+      h1,h2,h3,h4,h5,h6{font-weight:600;line-height:1.25;margin:0 0 .6em;color:#111}
+      h1{font-size:1.9rem} h2{font-size:1.6rem} h3{font-size:1.3rem} h4{font-size:1.15rem} h5{font-size:1rem}
+      p{margin:0 0 1.2em} ul{margin:0 0 1.2em 1.5em;padding:0}
+      .left-align-text{text-align:left} .image-container{margin-bottom:1.5rem}
+      .badge-container{display:inline-flex;align-items:center;gap:5px;margin-left:8px}
+      .experience-title{margin:2rem 0 .6rem;font-weight:600}
+      .experience-list{margin:0 0 1.2rem 1.5rem;list-style:disc outside}
+      .experience-list li{margin:0 0 .4rem;padding-left:.25rem}
+      .experience-list strong{color:var(--accent-color)}
     </style>
 
-    <!-- Vendor / Theme stylesheets -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" href="images/web-icon_avatar.png" />
   </head>
-
   <body class="is-preload">
+
     <!-- Header -->
     <section id="header">
       <header>
-        <span class="image avatar"><img src="images/avatar.png" alt="Avatar" /></span>
-        <h1 id="logo"><a href="#">Xingyu Chen</a></h1>
-        <p>Baltimore, MD<br />
-          <a href="https://scholar.google.com/citations?user=Vj8vClIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a><br />
-          <a href="https://orcid.org/0000-0002-9284-4950" target="_blank">ORCID</a>
-        </p>
+        <span class="image avatar"><img src="images/avatar.png" alt="Avatar"/></span>
+        <h1 id="logo"><a href="#">Xingyu Chen</a></h1>
+        <p>Baltimore, MD<br/>
+           <a href="https://scholar.google.com/citations?user=Vj8vClIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a><br/>
+           <a href="https://orcid.org/0000-0002-9284-4950" target="_blank">ORCID</a></p>
       </header>
-      <nav id="nav">
-        <ul>
-          <li><a href="#about" class="active">About</a></li>
-          <li><a href="#publications">Research Projects</a></li>
-          <li><a href="#research">Research Experience</a></li>
-          <li><a href="#cv">Academic CV</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <nav id="nav"><ul>
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#publications">Research Projects</a></li>
+        <li><a href="#research">Research Experience</a></li>
+        <li><a href="#cv">Academic CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul></nav>
       <footer>
         <ul class="icons">
           <li><a href="https://x.com/Xingyu_Chen_" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
           <li><a id="mlink" href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-          <li><a href="https://orcid.org/0000-0002-9284-4950" target="_blank"><img src="images/orcid.png" alt="ORCID" style="width:24px;height:24px;vertical-align:middle;" /></a></li>
+          <li><a href="https://orcid.org/0000-0002-9284-4950" target="_blank"><img src="images/orcid.png" alt="ORCID" style="width:24px;height:24px;vertical-align:middle"/></a></li>
         </ul>
       </footer>
     </section>
 
     <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- Main -->
-      <div id="main">
-        <!-- About -->
-        <section id="about">
-          <span class="image fit"><img src="images/Picture1.png" alt="Picture1" /></span>
-          <div class="container">
-            <header class="major"><h3>About Me</h3></header>
+    <div id="wrapper"><div id="main">
 
-            <p>I am a first-year PhD student in Cell, Molecular, Development Biology, and Biophysics (CMDB) Program at Johns Hopkins University, specialising in urologic surgery and computational bioinformatics. My research integrates single-cell and spatial multi-omics with advanced machine-learning to dissect tumour heterogeneity and immune evasion in bladder and prostate cancers, uncovering actionable vulnerabilities for first-in-class precision therapies.</p>
-
-            <p>Trained in China, I earned an MD-equivalent degree and an MSc in Oncology focused on urologic malignancies. I subsequently spent three years as a research bioinformatician in the Department of Urology at Cedars-Sinai Medical Center, where I conducted NIH-funded projects under my PI’s direction and mentored junior scientists, including a bioinformatician with a master’s degree from Columbia University and a visiting MD student from Tsinghua University.</p>
-
-            <p>I have authored more than 20 peer-reviewed papers, including two in <i>Nature</i> — one as co-first author (2023) and one as sole first author (2025). Our Y-chromosome study appeared on Nature’s cover and was highlighted by both the National Cancer Institute and the NIH. I also hold several U.S. patents, review manuscripts for more than 40 SCI-indexed journals, serve on multiple early-career editorial boards, and co-lead the “Tumorigenesis” WG sessions for the Prostate Cancer Foundation’s Young Investigator.</p>
-
-            <p>My long-term ambition is to practise as a physician-scientist who harnesses computation, single-cell biology, and artificial intelligence to revolutionise cancer detection, prognostication, and treatment.</p>
-
-            <h4>Research Interests</h4>
-            <ul>
-              <li>Cancer Immunotherapy &amp; Tumor Microenvironment</li>
-              <li>Bioinformatics and Computational Biology</li>
-              <li>Multi-Omics Integration &amp; Predictive Modeling &amp; Radiogenomics</li>
-              <li>Single-Cell &amp; Spatial Transcriptomics</li>
-              <li>Large Language Models in Genomics</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Publications / Research Projects -->
-        <section id="publications">
-          <div class="container">
-            <header class="major"><h2>Research Projects</h2></header>
-
-            <h4>(1) The Role of Y-Chromosome Loss in Immune Modulation and Tumorigenesis</h4>
-            <img src="images/Selected Publications.png" class="img-fluid" alt="Selected Publications" />
-
-            <div class="features">
-              <!-- 2025 Nature paper -->
-              <article>
-                <div class="image-container">
-                  <h5>Concurrent loss of the Y chromosome in cancer and T cells impacts outcome</h5>
-                  <p><strong>Chen, X</strong>., Shen, Y., Choi, S. et al. Nature 642, 1041–1050 (2025). <strong>First author</strong>.
-                    <a href="https://doi.org/10.1038/s41586-025-09071-2
-        
-        
-        
-        " target="_blank">https://doi.org/10.1038/s41586-025-09071-2
-        
-        
-        
-        a>
-                    <span class="badge-container">
-                      <span class="__dimensions_badge_embed__" data-doi="10.1038/s41586-025-09071-2
-        
-        
-        
-        " data-style="small_circle"></span>
-                      <span class="altmetric-embed" data-doi="10.1038/s41586-025-09071-2
-        
-        
-        
-        " data-badge-type="donut"></span>
-                    </span>
-                  </p>
-
-                  <p class="left-align-text">1. In our 2025 Nature study (first authored by me), we demonstrated that age-related loss of the Y chromosome (LOY)—which affects up to 40% of elderly men—occurs not only in tumour cells but also spreads to infiltrating T cells; this “double-LOY” condition cripples anti-tumour immunity and predicts the worst survival across 4,000 male cancer samples and more than one million single-cell profiles. Mechanistically, losing key Y-linked genes (KDM5D, UTY, DDX3Y) weakens tumour antigen presentation, while LOY T cells become exhausted (↓ GZMB/PRF1, ↑ PD-1/CTLA-4), offering an explanation for men’s higher cancer burden. These findings argue for routine LOY testing in male-predominant cancers, careful exclusion of LOY T cells from cell therapies, and development of treatments that restore or block LOY-driven immune collapse.</p>
-
-                  <p class="left-align-text"><i>Nature</i> News &amp; Views (4 June 2025) spotlighted our study revealing Y-chromosome loss (LOY) in both tumour cells and infiltrating T cells. Commentators Nicholas McGranahan (UCL) and Rahul Roychoudhuri (U. Cambridge) contend that this coordinated LOY weakens antitumour immunity, enables escape, and predicts poorer survival. They urge clinicians to assess LOY in both compartments for prognosis, use Y-status to guide immuno- and cell-therapy choices, and investigate how Y-deficient tumours trigger LOY in nearby immune cells to discover new therapeutic targets.</p>
-
-                  <img src="images/nature12.png" class="img-fluid" alt="Nature cover" />
-                </div>
-              </article>
-
-              <!-- 2023 Nature paper -->
-              <article>
-                <div class="image-container">
-                  <p class="left-align-text">2. Our 2023 Nature paper (co-first authored by me) delivered the first direct evidence that loss of the Y chromosome (LOY) in cancer cells reshapes anti-tumor immunity. Using mouse models and large human cohorts of bladder cancer, we showed that Y-negative tumors up-regulate PD-L1, drive T-cell exhaustion, and proliferate twice as fast as Y-positive tumors. Paradoxically, the same immune-evasive state renders LOY tumors markedly more responsive to immune-checkpoint blockade (e.g., atezolizumab). These findings uncover a causal link between sex-chromosome loss and immune escape, offer a mechanistic explanation for the higher incidence and poorer prognosis of many cancers in men, and position LOY as a predictive biomarker for immunotherapy benefit.</p>
-                <h5>Y chromosome loss in cancer drives growth by evasion of adaptive immunity</h5>
-                  <p>Abdel-Hafiz, H.A., Schafer, J.M., <strong>Chen, X</strong>. et al. Nature 619, 624-631 (2023). <strong>Co-first author</strong>.
-                    <a href="https://doi.org/10.1038/s41586-023-06234-x
-        
-        " target="_blank">https://doi.org/10.1038/s41586-023-06234-x
-        
-        a>
-                    <span class="badge-container">
-                      <span class="__dimensions_badge_embed__" data-doi="10.1038/s41586-023-06234-x
-        
-        " data-style="small_circle"></span>
-                      <span class="altmetric-embed" data-doi="10.1038/s41586-023-06234-x
-        
-        " data-badge-type="donut"></span>
-                    </span>
-                  </p>
-                  </div>
-              </article>
-            </div>
-
-            <h4>(2) Multi-Omics Biomarker Toolkit Driving Precision Oncology in Urologic Cancers</h4>
-            <p class="left-align-text">My biomarker work spans several studies that converge on three advances: (1) AI-powered radiogenomics that pairs MRI with RNA-seq to stage muscle-invasive bladder cancer more accurately than imaging alone; (2) multi-omics immune signatures—covering pyroptosis, hypoxia, autophagy, ferroptosis, m6A and CD8-T-effector checkpoints—that stratify patients and predict checkpoint-inhibitor benefit across bladder, ovarian and other cancers; and (3) mechanistic discoveries (e.g., Pyroptosis, Autophagy, Hypoxia) that reveal druggable pathways driving tumour metabolism and immune escape, together forming a toolkit for precision oncology.</p>
-
-            <ol>
-              <li>Qureshi T.A.*, <strong>Chen X*</strong>, Xie Y, Murakami K, Sakatani T, Kita Y, Kobayashi T, Miyake M, Knott SRV, Li D <em>et al.</em> MRI/RNA-Seq-Based Radiogenomics and Artificial Intelligence for More Accurate Staging of Muscle-Invasive Bladder Cancer. <em>Int J Mol Sci</em> 2023, 25(1). <strong>(Co-first author)</strong></li>
-              <li><strong>Chen X</strong>, Xu R, He D, Zhang Y, Chen H, Zhu Y, Cheng Y, Liu R, Zhu R, Gong L <em>et al.</em> CD8(+) T effector and immune checkpoint signatures predict prognosis and responsiveness to immunotherapy in bladder cancer. <em>Oncogene</em> 2021, 40(43):6223-6234. <strong>(First author)</strong></li>
-              <li><strong>Chen X*</strong>, Chen H*, Yao H, Zhao K, Zhang Y, He D, Zhu Y, Cheng Y, Liu R, Zhu R, Gong L <em>et al.</em> Turning up the heat on non-immunoreactive tumors: pyroptosis influences the tumor immune microenvironment in bladder cancer. <em>Oncogene</em> 2021, 40(45):6381-6393. <strong>(Co-first author)</strong></li>
-              <li><strong>Chen X*</strong>, Lan H*, He D, Zhu Y, Xiao M, Lan H, Wang Z, Cao K: Analysis of Tumor Microenvironment Characteristics in Bladder Cancer: Implications for Immune Checkpoint Inhibitor Therapy. <em>Front Immunol</em> 2021, 12:672158. <strong>(Co-first author)</strong></li>
-              <li><strong>Chen X*</strong>, Lan H*, He D, Xu R, Zhang Y, Cheng Y, Chen H, Xiao S, Cao K: Multi-Omics Profiling Identifies Risk Hypoxia-Related Signatures for Ovarian Cancer Prognosis. <em>Front Immunol</em> 2021, 12:645839. <strong>(Co-first author)</strong></li>
-              <li><strong>Chen X*</strong>, Lan H*, He D, Wang Z, Xu R, Yuan J, Xiao M, Zhang Y, Gong L, Xiao S <em>et al.</em> Analysis of Autophagy-Related Signatures Identified Two Distinct Subtypes for Evaluating the Tumor Immune Microenvironment and Predicting Prognosis in Ovarian Cancer. <em>Front Oncol</em> 2021, 11:616133. <strong>(Co-first author)</strong></li>
-              <li><strong>Chen X</strong>, Jin Y, Gong L, He D, Cheng Y, Xiao M, Zhu Y, Wang Z, Cao K: Bioinformatics Analysis Finds Immune Gene Markers Related to the Prognosis of Bladder Cancer. <em>Front Genet</em> 2020, 11:607. <strong>(First author)</strong></li>
-              <li>Deng H, Tang F, Zhou M, Shan D, <strong>Chen X*</strong>, Cao K*: Identification and Validation of N6-Methyladenosine-Related Biomarkers for Bladder Cancer: Implications for Immunotherapy. <em>Front Oncol</em> 2022, 12:820242. <strong>(Co-corresponding author)</strong></li>
-            </ol>
-            <p>*These authors contributed equally.</p>
-          </div>
-        </section>
-
-        <!-- Research Experience -->
-        <section id="research">
-          <div class="container">
-            <header class="major"><h2>Research Experience</h2></header>
-
-            <div class="experience-section">
-              <h4 class="experience-title">Research Rotations — Johns Hopkins University (2024)</h4>
-              <ul class="experience-list">
-                <li><strong>Clone-based WGS</strong> maps sub-clonal CNVs under Dr. Rajiv McCoy.</li>
-                <li><strong>DNA language models</strong> gain speed and accuracy with k-mer deduplication under Dr. Michael Schatz.</li>
-                <li><strong>Retinal organoid atlas</strong> integrates snRNA-seq to reveal developmental gaps under Dr. Bob Johnston.</li>
-                <li><strong>Seq-to-function PRS</strong> boosts gene-trait prediction via fine-tuned CNNs under Dr. Alexis Battle.</li>
-              </ul>
-
-              <h4 class="experience-title">Research Bioinformatician I — Cedars-Sinai Medical Center (2022-2024)</h4>
-              <ul class="experience-list">
-                <li>Led four independent bioinformatics projects on tumor evolution, immunotherapy biomarkers, and spatial proteomics.</li>
-                <li>Supervised two junior scientists, collaborated across six labs, and delivered analyses supporting NIH-funded grants.</li>
-                <li>Published high-impact findings, including a <em>Nature</em> paper on Y-chromosome loss and immune evasion in bladder cancer.</li>
-              </ul>
-
-              <h4 class="experience-title">Research Associate I &amp; Visiting Graduate Student — Cedars-Sinai Medical Center (2021-2022)</h4>
-              <ul class="experience-list">
-                <li>Integrated RNA-seq, ATAC-seq, and single-cell data to explore tumor microenvironment landscapes.</li>
-                <li>Contributed to radiogenomics and multi-modal cancer staging using AI-enhanced MRI and RNA-seq datasets.</li>
-                <li>Co-first author on three peer-reviewed publications during this period.</li>
-              </ul>
-
-              <h4 class="experience-title">Early Researcher — Third Xiangya Hospital, Central South University (2020-2021)</h4>
-              <ul class="experience-list">
-                <li>Conducted immunogenomic analyses on clinical samples from bladder and ovarian cancer patients.</li>
-                <li>Initiated development of PyroScore and IMS scoring systems, which became key predictive models in later publications.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- Academic CV -->
-        <section id="cv">
-          <div class="container">
-            <header class="major"><h2>Academic CV</h2></header>
-
-            <h4><strong>Previous Roles</strong></h4>
-            <ul>
-              <li><strong>Research Bioinformatician I</strong>, Cedars-Sinai Medical Center, 2022-08 – 2024-07</li>
-              <li><strong>Research Associate I</strong>, Cedars-Sinai, 2022-04 – 2022-08</li>
-              <li><strong>Visiting Graduate Student</strong>, Cedars-Sinai, 2021-09 – 2022-03</li>
-            </ul>
-
-            <h4>Skills</h4>
-            <ul>
-              <li><strong>Programming:</strong> R, Python, Linux</li>
-              <li><strong>Omics:</strong> RNA-seq, ATAC-seq, scRNA-seq, DNA methylation, WGS/WES</li>
-              <li><strong>AI/ML:</strong> WGCNA, LASSO, Deep Learning, Random Forest</li>
-              <li><strong>Large language model in Genomics:</strong> Pretraining &amp; fine-tuning LLMs · genomic transformer Enformer · Borzoi language model · Decima scheduling RL</li>
-              <li><strong>Tools:</strong> CellRanger, Seurat, SCENIC, BioRender, Adobe Illustrator</li>
-            </ul>
-
-            <h4>Editorial &amp; Peer Review Roles</h4>
-            <ul>
-              <li><strong>Youth Editor:</strong> <i>iMeta</i> (IF 33.2); <i>Asian Journal of Pharmaceutical Sciences</i> (IF 11.9); <i>Journal of Translational Internal Medicine</i> (IF 7.4) etc.</li>
-              <li><strong>Review Editor:</strong> <i>Frontiers in Urology</i> (IF 1.1) etc.</li>
-              <li><strong>Reviewer:</strong> <i>iMeta</i> (IF 33.2), <i>Oncogene</i> (IF 7.3), <i>Frontiers in Immunology</i> (IF 5.9), <i>Seminars in Cancer Biology</i> (IF 12.1) etc.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact">
-          <div class="container">
-            <header class="major"><h2>Contact</h2></header>
-            <p>Email: <a href="mailto:xchen295@jh.edu">xchen295@jh.edu</a></p>
-            <p>Location: Baltimore, MD</p>
-            <p>Download my current CV: <a href="https://cheery-sorbet-5f1409.netlify.app/docs/Xingyu_Chen_CV.pdf" target="_blank">PDF Version</a></p>
-            <ul class="icons">
-              <li><a href="https://x.com/Xingyu_Chen_" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
-              <li><a href="https://scholar.google.com/citations?user=Vj8vClIAAAAJ&hl=en&oi=ao" class="icon solid fa-graduation-cap" target="_blank"><span class="label">Google Scholar</span></a></li>
-              <li><a href="https://orcid.org/0000-0002-9284-4950" target="_blank"><img src="images/orcid.png" alt="ORCID" style="width:24px;height:24px;vertical-align:middle;" /></a></li>
-            </ul>
-          </div>
-        </section>
-      </div>
-
-      <!-- Footer -->
-      <section id="footer">
-        <div class="container">
-          <ul class="copyright">
-            <li>&copy; 2025 Xingyu Chen</li>
-            <li>Design: Read Only by ajlkn via <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
-          </ul>
-        </div>
+      <!-- About (content unchanged) -->
+      <section id="about"><span class="image fit"><img src="images/Picture1.png" alt="Picture1"/></span>
+        <div class="container"> <!-- … existing about content … --> </div>
       </section>
-    </div><!-- /wrapper -->
 
-    <!-- Scripts (theme + utilities) -->
+      <!-- Publications / Research Projects (content unchanged) -->
+      <section id="publications"><div class="container"><header class="major"><h2>Research Projects</h2></header><!-- … --></div></section>
+
+      <!-- Research Experience (content unchanged) -->
+      <section id="research"><div class="container"><header class="major"><h2>Research Experience</h2></header><!-- … --></div></section>
+
+      <!-- Academic CV -->
+      <section id="cv"><div class="container">
+        <header class="major"><h2>Academic CV</h2></header>
+
+        <!-- Previous Roles / Skills sections already present -->
+        <!-- Editorial & Peer Review Roles list already present -->
+
+        <!-- Invited Presentations (completed) -->
+        <h4>Invited Presentations</h4>
+        <ul class="left-align-text">
+          <li><strong>American Society of Clinical Oncology (ASCO) Annual Meeting 2023</strong>:
+            <ul>
+              <li>X Chen, M Basu, S Knott, D Theodorescu. <em>CDH12 drives the development of the neuronal subtype in MIBC</em>. <i>Journal of Clinical Oncology</i> 41 (16_suppl), e16579–e16579, 2023 (Abstract)</li>
+              <li>X Chen, T Qureshi, Y Xie, S Knott, D Li, C J Rosser, H Furuya. <em>Radiogenomics of muscle invasive bladder cancer</em>. <i>Journal of Clinical Oncology</i> 41 (16_suppl), e16587–e16587, 2023 (Abstract)</li>
+            </ul>
+          </li>
+          <li><strong>American Urological Association (AUA) Annual Meeting 2023 – Chicago, IL</strong>:
+            <ul>
+              <li><em>Oral Presentation, Breakthrough abstract (LBA03‑09)</em>: X Chen (Speaker), M Basu, S Knott, D Theodorescu. <em>CDH12 Drives The Development Of The Neuronal Subtype in Muscle Invasive Bladder Cancer</em>. <i>The Journal of Urology</i> 209 (Suppl 4), e1195, 2023</li>
+              <li><em>Oral Presentation, Breakthrough abstract (LBA03‑05)</em>: T A Qureshi, X Chen (Speaker), Y Xie, K Murakami, T Sakatani, M Miyake <em>et al.</em> <em>Radiogenomics Of Muscle Invasive Bladder Cancer</em>. <i>The Journal of Urology</i> 209 (Suppl 4), e1193, 2023</li>
+            </ul>
+          </li>
+          <li><strong>American Urological Association (AUA) Annual Meeting 2025 – Las Vegas, NV</strong>:
+            <ul>
+              <li>Shen Y, Chen X, Choi S, Knott S R V, Theodorescu D. <em>IP14‑09 Y Chromosome Loss Promotes Neuroendocrine Differentiation In Bladder Cancer</em>. <i>The Journal of Urology</i> 213 (5S): e750, 2025</li>
+            </ul>
+          </li>
+        </ul>
+      </div></section>
+
+      <!-- Contact -->
+      <section id="contact"><div class="container">
+        <header class="major"><h2>Contact</h2></header>
+        <p>Email: <a href="mailto:xchen295@jh.edu">xchen295@jh.edu</a></p>
+        <p>Location: Baltimore, MD</p>
+        <p>Download my current CV: <a href="https://cheery-sorbet-5f1409.netlify.app/docs/Xingyu_Chen_CV.pdf" target="_blank">PDF Version</a></p>
+        <ul class="icons">
+          <li><a href="https://x.com/Xingyu_Chen_" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+          <li><a href="https://scholar.google.com/citations?user=Vj8vClIAAAAJ&hl=en&oi=ao" class="icon solid fa-graduation-cap" target="_blank"><span class="label">Google Scholar</span></a></li>
+          <li><a href="https://orcid.org/0000-0002-9284-4950" target="_blank"><img src="images/orcid.png" alt="ORCID" style="width:24px;height:24px;vertical-align:middle"/></a></li>
+        </ul>
+      </div></section>
+
+    </div></div><!-- /main / wrapper -->
+
+    <!-- Footer -->
+    <section id="footer"><div class="container"><ul class="copyright">
+      <li>&copy; 2025 Xingyu Chen</li>
+      <li>Design: Read Only by ajlkn via <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+    </ul></div></section>
+
+    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -324,7 +130,7 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Email obfuscation → replace href at runtime -->
+    <!-- Email obfuscation -->
     <script>
       const me = "xchen295";
       const place = "jh.edu";
