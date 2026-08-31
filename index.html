@@ -1,363 +1,1391 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>Xingyu Chen – Cancer Genomics </title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Xingyu Chen, MD, MSc — Physician-scientist in urologic oncology and computational & translational cancer research, integrating clinical medicine, cancer genomics, tumor immunology, AI, functional genomics, and single-cell & spatial multi-omics." />
+  <meta name="theme-color" content="#0a1830" />
+  <title>Xingyu Chen, MD, MSc | Urologic Oncology & Translational Cancer Research</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://xingyuchen.org/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://xingyuchen.org/" />
+  <meta property="og:title" content="Xingyu Chen, MD, MSc" />
+  <meta property="og:description" content="Decode cancer ecosystems. Perturb causal mechanisms. Translate discoveries into therapies." />
+  <meta property="og:image" content="https://xingyuchen.org/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Xingyu Chen, MD, MSc — Decode. Perturb. Translate." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Xingyu Chen, MD, MSc" />
+  <meta name="twitter:description" content="Physician-Scientist in Urologic Oncology and Translational Cancer Research" />
+  <meta name="twitter:image" content="https://xingyuchen.org/og.png" />
 
-    <!-- ===================== GLOBAL STYLES ===================== -->
-    <style>
-      /*─ 1. Typography & variables ─*/
-      @font-face {
-        font-family: "Inter";
-        font-weight: 400 700;
-        src: url("https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK_x90DW4ZGdE.woff2") format("woff2-variations");
-        font-display: swap;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#0b1730;
+      --ink-2:#22314d;
+      --muted:#66758f;
+      --line:#dce3ec;
+      --paper:#ffffff;
+      --soft:#f5f8fb;
+      --soft-2:#edf3f7;
+      --navy:#0a1830;
+      --navy-2:#102b4f;
+      --blue:#1d5f9f;
+      --teal:#147d79;
+      --gold:#c49a52;
+      --shadow:0 18px 60px rgba(16,43,79,.10);
+      --shadow-soft:0 10px 30px rgba(16,43,79,.07);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.72;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button{font:inherit}
+    ::selection{background:#d8e8f6;color:var(--ink)}
+
+    .container{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:.55rem;
+      font-size:.76rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+      color:var(--teal);
+    }
+    .eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+    .section{padding:112px 0}
+    .section.soft{background:linear-gradient(180deg,#f8fafc 0%,#f3f7fa 100%)}
+    .section.dark{
+      background:
+        radial-gradient(circle at 10% 20%,rgba(37,112,158,.20),transparent 30%),
+        radial-gradient(circle at 90% 10%,rgba(20,125,121,.14),transparent 28%),
+        linear-gradient(135deg,#081526,#102846 72%,#0b2037);
+      color:white;
+    }
+    .section-head{
+      max-width:790px;
+      margin-bottom:54px;
+    }
+    .section-head h2{
+      margin:.7rem 0 1rem;
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(2.1rem,4.2vw,3.45rem);
+      line-height:1.08;
+      letter-spacing:-.045em;
+    }
+    .section-head p{font-size:1.05rem;color:var(--muted);margin:0}
+    .dark .section-head p{color:#c7d4e3}
+
+    /* NAV */
+    .nav-wrap{
+      position:fixed;inset:0 0 auto 0;z-index:50;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background:rgba(7,20,37,.68);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      transition:.25s ease;
+    }
+    .nav-wrap.scrolled{
+      background:rgba(255,255,255,.92);
+      border-color:rgba(11,23,48,.08);
+      box-shadow:0 5px 24px rgba(11,23,48,.06);
+    }
+    .nav{
+      min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-family:"Manrope",sans-serif;font-weight:800;letter-spacing:-.02em;color:white}
+    .nav-wrap.scrolled .brand{color:var(--ink)}
+    .brand-mark{
+      width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;
+      color:white;
+      background:linear-gradient(135deg,var(--blue),var(--teal));
+      font-size:.82rem;
+      box-shadow:0 7px 20px rgba(29,95,159,.25);
+    }
+    .nav-links{display:flex;align-items:center;gap:26px;font-size:.91rem;font-weight:600;color:#dce7f3}
+    .nav-wrap.scrolled .nav-links{color:var(--ink-2)}
+    .nav-links a{opacity:.88;transition:.2s}
+    .nav-links a:hover{opacity:1;color:#5dc8bf}
+    .nav-wrap.scrolled .nav-links a:hover{color:var(--teal)}
+    .nav-cta{
+      padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.25);color:white!important;
+    }
+    .nav-wrap.scrolled .nav-cta{border-color:#cad5e2;color:var(--ink)!important}
+    .menu{
+      display:none;border:0;background:transparent;color:white;padding:8px;cursor:pointer;
+    }
+    .nav-wrap.scrolled .menu{color:var(--ink)}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;align-items:center;
+      position:relative;overflow:hidden;
+      color:white;
+      background:
+        radial-gradient(circle at 72% 28%,rgba(23,125,121,.22),transparent 24%),
+        radial-gradient(circle at 85% 70%,rgba(29,95,159,.24),transparent 30%),
+        linear-gradient(125deg,#071321 0%,#0b1f38 45%,#123052 100%);
+      padding:130px 0 76px;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:auto -10% -170px 28%;height:310px;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);
+      transform:rotate(-8deg);filter:blur(10px);
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:minmax(0,1.18fr) minmax(330px,.82fr);
+      gap:70px;align-items:center;position:relative;z-index:2;
+    }
+    .hero-kicker{color:#87d4cc}
+    .hero h1{
+      margin:.85rem 0 .4rem;
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(3.45rem,7vw,6.5rem);
+      line-height:.94;letter-spacing:-.065em;font-weight:800;
+    }
+    .credentials{
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(1.22rem,2.2vw,1.65rem);
+      color:#c9d7e8;font-weight:600;margin-bottom:1.6rem;
+    }
+    .hero-title{
+      max-width:820px;
+      font-size:clamp(1.25rem,2.5vw,1.9rem);
+      line-height:1.38;
+      color:#eaf1f8;
+      font-weight:600;
+      letter-spacing:-.02em;
+    }
+    .hero-title strong{color:#80d4cb;font-weight:700}
+    .hero-desc{
+      margin:1.5rem 0 2rem;max-width:760px;color:#b9c9dc;font-size:1.06rem
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      padding:12px 18px;border-radius:999px;font-weight:700;font-size:.94rem;
+      border:1px solid transparent;transition:transform .2s,background .2s,border .2s;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:white;color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.15)}
+    .btn.ghost{border-color:rgba(255,255,255,.22);color:#eef5fb;background:rgba(255,255,255,.045)}
+    .hero-mini{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:34px;color:#aebfd2;font-size:.82rem
+    }
+    .hero-mini span{padding:7px 11px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.035)}
+
+    .hero-visual{position:relative;min-height:530px;display:grid;place-items:center}
+    .portrait-shell{
+      width:min(390px,92%);aspect-ratio:1/1.14;position:relative;border-radius:38px;overflow:hidden;
+      background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow:0 34px 90px rgba(0,0,0,.28);
+    }
+    .portrait-shell img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .portrait-shell::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 55%,rgba(7,19,33,.30));
+      pointer-events:none;
+    }
+    .orbit{
+      position:absolute;width:490px;height:490px;border-radius:50%;
+      border:1px solid rgba(116,210,201,.18);
+      animation:spin 30s linear infinite;
+    }
+    .orbit.two{width:390px;height:390px;border-color:rgba(124,166,218,.15);animation-direction:reverse;animation-duration:24s}
+    .orbit::before,.orbit::after{
+      content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:#71c9c0;box-shadow:0 0 18px rgba(113,201,192,.7)
+    }
+    .orbit::before{top:24%;left:4%}.orbit::after{bottom:14%;right:10%;background:#8bb2dc}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .float-card{
+      position:absolute;min-width:170px;padding:14px 16px;border-radius:16px;
+      background:rgba(8,24,45,.82);backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.13);box-shadow:0 16px 44px rgba(0,0,0,.24);
+    }
+    .float-card strong{display:block;font:800 1.4rem/1 "Manrope",sans-serif;color:white}
+    .float-card span{display:block;color:#9fb2c9;font-size:.76rem;margin-top:5px}
+    .float-card.one{top:55px;right:-8px}
+    .float-card.two{bottom:48px;left:-22px}
+
+
+    .focus-line{
+      margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:9px 12px;
+      color:#d8e6f3;font-size:.82rem;font-weight:600
+    }
+    .focus-label{
+      color:#86d7cf;font-size:.68rem;letter-spacing:.13em;font-weight:800;
+      padding:5px 8px;border-radius:999px;border:1px solid rgba(134,215,207,.34);
+      background:rgba(134,215,207,.06)
+    }
+    .focus-sep{color:#647b95}.focus-muted{color:#9fb2c8;font-weight:500}
+    .prestige-strip{
+      margin-top:28px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+    }
+    .prestige-item{
+      padding:14px 15px;border-radius:14px;border:1px solid rgba(255,255,255,.11);
+      background:rgba(255,255,255,.035)
+    }
+    .prestige-item strong{
+      display:block;color:white;font:800 .92rem/1.2 "Manrope",sans-serif;
+    }
+    .prestige-item span{
+      display:block;color:#98acc2;font-size:.69rem;line-height:1.4;margin-top:4px
+    }
+    .uro-wrap{
+      display:grid;grid-template-columns:.88fr 1.12fr;gap:44px;align-items:start
+    }
+    .uro-aside{
+      position:sticky;top:115px;border-radius:24px;padding:30px;
+      background:linear-gradient(145deg,#0b1b31,#123456);color:white;
+      box-shadow:var(--shadow)
+    }
+    .uro-aside h3{
+      margin:.7rem 0 1rem;font:800 2rem/1.08 "Manrope",sans-serif;letter-spacing:-.04em
+    }
+    .uro-aside p{color:#bfd0e0;font-size:.91rem}
+    .uro-aside .uro-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+    .uro-aside .uro-tags span{
+      font-size:.72rem;padding:6px 9px;border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;color:#d9e6f2;background:rgba(255,255,255,.045)
+    }
+    .uro-list{display:grid;gap:16px}
+    .uro-item{
+      padding:24px 26px;border-radius:20px;border:1px solid var(--line);
+      background:white;box-shadow:var(--shadow-soft)
+    }
+    .uro-item .uro-kicker{
+      font-size:.69rem;letter-spacing:.11em;text-transform:uppercase;font-weight:800;color:var(--teal)
+    }
+    .uro-item h4{
+      margin:.45rem 0 .7rem;font:800 1.15rem/1.35 "Manrope",sans-serif;letter-spacing:-.02em
+    }
+    .uro-item p{margin:0;color:var(--muted);font-size:.88rem}
+    .uro-item .impact{
+      margin-top:12px;font-size:.76rem;font-weight:700;color:var(--blue)
+    }
+    .leadership-note{
+      margin-top:18px;padding:18px 20px;border-left:3px solid var(--gold);
+      background:#fbf8f2;border-radius:0 14px 14px 0;color:#5b4a2f;font-size:.87rem
+    }
+
+
+    .metric-suite{
+      display:grid;grid-template-columns:1fr 1fr;gap:16px;
+    }
+    .metric-group{
+      background:white;border:1px solid #e2e8f0;border-radius:22px;
+      box-shadow:var(--shadow);overflow:hidden;
+    }
+    .metric-group-head{
+      display:flex;justify-content:space-between;align-items:center;gap:18px;
+      padding:14px 20px 12px;border-bottom:1px solid #edf1f5;background:#fbfcfd;
+    }
+    .metric-group-kicker{
+      font:800 .72rem/1 "Manrope",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--navy-2)
+    }
+    .metric-group-note{
+      font-size:.68rem;color:var(--muted)
+    }
+    .metric-grid-three{
+      grid-template-columns:repeat(3,1fr)!important;
+      border:0!important;border-radius:0!important;box-shadow:none!important;
+    }
+    .metric-grid-three .metric{
+      padding:24px 20px;background:white
+    }
+    .metric-grid-three .metric:nth-child(3){border-right:0}
+    .metric-grid-three .num{
+      font-size:clamp(1.65rem,2.5vw,2.15rem)
+    }
+    .metric-grid-three .label{
+      font-size:.74rem
+    }
+
+    .hero .eyebrow{
+      letter-spacing:.14em
+    }
+    .hero-title{
+      max-width:860px
+    }
+    .hero-desc strong{
+      color:#eef6fb
+    }
+
+    .urology-achievements{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px
+    }
+    .urology-achievement{
+      padding:18px 18px;border-radius:16px;background:#f8fafc;border:1px solid var(--line)
+    }
+    .urology-achievement strong{
+      display:block;font:800 .95rem/1.25 "Manrope",sans-serif;color:var(--navy-2)
+    }
+    .urology-achievement span{
+      display:block;font-size:.72rem;color:var(--muted);line-height:1.45;margin-top:6px
+    }
+
+    .research-card .card-body h3 em{
+      font-style:italic
+    }
+
+    .pub-meta em{
+      color:#394d65
+    }
+
+    .academic-summary{
+      margin-top:38px;padding:26px 28px;border-radius:22px;
+      background:linear-gradient(135deg,#f6f9fb,#eef5f7);
+      border:1px solid #dfe8ee;
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center
+    }
+    .academic-summary h3{
+      margin:0 0 10px;font:800 1.35rem/1.25 "Manrope",sans-serif;letter-spacing:-.03em
+    }
+    .academic-summary p{
+      margin:0;color:var(--muted);font-size:.9rem
+    }
+    .academic-summary .summary-points{
+      display:grid;grid-template-columns:1fr 1fr;gap:9px
+    }
+    .summary-point{
+      padding:12px 13px;border-radius:12px;background:white;border:1px solid #e2e9ef
+    }
+    .summary-point strong{
+      display:block;font:800 .78rem "Manrope",sans-serif;color:var(--navy-2)
+    }
+    .summary-point span{
+      display:block;color:var(--muted);font-size:.67rem;margin-top:3px
+    }
+
+    .hero-visual::before{
+      content:"";position:absolute;width:280px;height:280px;border-radius:50%;
+      background:radial-gradient(circle,rgba(20,125,121,.12),transparent 67%);
+      filter:blur(4px)
+    }
+
+    .section-head .accent-line{
+      display:block;width:70px;height:3px;border-radius:999px;
+      background:linear-gradient(90deg,var(--teal),var(--blue));margin-top:20px
+    }
+
+    .footer-inner{
+      align-items:center
+    }
+
+    /* METRICS */
+    .metrics{
+      position:relative;z-index:5;margin-top:-34px;
+    }
+    .metric-grid{
+      display:grid;grid-template-columns:repeat(5,1fr);
+      background:white;border:1px solid #e2e8f0;border-radius:22px;box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .metric-grid-six{grid-template-columns:repeat(6,1fr)}
+    .metric{padding:26px 22px;border-right:1px solid #e9eef4}
+    .metric:last-child{border-right:0}
+    .metric-grid-six .metric:nth-child(6){border-right:0}
+    .metric .num{display:block;font:800 clamp(1.7rem,3vw,2.25rem)/1 "Manrope",sans-serif;letter-spacing:-.04em;color:var(--navy-2)}
+    .metric .label{display:block;font-size:.78rem;color:var(--muted);margin-top:7px;line-height:1.35}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:start}
+    .about-sticky{position:sticky;top:118px}
+    .about-sticky h2{
+      font:800 clamp(2.2rem,4vw,3.55rem)/1.07 "Manrope",sans-serif;
+      letter-spacing:-.05em;margin:.7rem 0 1.2rem
+    }
+    .about-sticky p{color:var(--muted);font-size:1.03rem}
+    .about-copy p{font-size:1.04rem;color:var(--ink-2)}
+    .about-copy .lead{font-size:1.22rem;line-height:1.62;color:var(--ink)}
+    .about-copy strong{color:var(--navy-2)}
+    .quote{
+      margin-top:28px;padding:22px 24px;border-left:3px solid var(--teal);
+      background:#f3f8f8;border-radius:0 14px 14px 0;
+      font:700 1.06rem/1.55 "Manrope",sans-serif;color:#18384a;
+    }
+
+    /* PILLARS */
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .pillar{
+      min-height:330px;padding:30px;border:1px solid rgba(255,255,255,.12);
+      border-radius:var(--radius);background:rgba(255,255,255,.045);position:relative;overflow:hidden;
+    }
+    .pillar::after{
+      content:"";position:absolute;width:160px;height:160px;border-radius:50%;
+      right:-70px;bottom:-70px;background:radial-gradient(circle,rgba(105,202,190,.14),transparent 68%);
+    }
+    .pillar-index{font:700 .75rem "Manrope",sans-serif;color:#79cbc3;letter-spacing:.15em}
+    .pillar h3{font:800 2rem/1.05 "Manrope",sans-serif;letter-spacing:-.045em;margin:42px 0 12px}
+    .pillar p{color:#bdcad8;font-size:.95rem}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+    .tag{font-size:.74rem;padding:6px 9px;border-radius:8px;background:rgba(255,255,255,.07);color:#d9e4ee;border:1px solid rgba(255,255,255,.07)}
+
+    /* RESEARCH */
+    .research-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .research-card{
+      border:1px solid var(--line);border-radius:var(--radius);background:white;
+      overflow:hidden;box-shadow:var(--shadow-soft);transition:transform .22s,box-shadow .22s;
+    }
+    .research-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .research-card.big{grid-column:span 7}
+    .research-card.side{grid-column:span 5}
+    .research-card.half{grid-column:span 6}
+    .card-top{
+      padding:28px 30px 0;display:flex;justify-content:space-between;gap:20px;align-items:flex-start
+    }
+    .paper-type{
+      display:inline-flex;align-items:center;gap:7px;
+      font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.11em;color:var(--teal)
+    }
+    .paper-type::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+    .journal{
+      font:700 .72rem "Manrope",sans-serif;padding:7px 10px;border-radius:999px;background:#eef4f9;color:#38536f;white-space:nowrap
+    }
+    .card-body{padding:18px 30px 30px}
+    .card-body h3{
+      margin:0 0 12px;font:800 clamp(1.32rem,2.3vw,2rem)/1.17 "Manrope",sans-serif;letter-spacing:-.035em
+    }
+    .card-body p{color:var(--muted);font-size:.94rem;margin:0 0 15px}
+    .card-body .role{color:var(--blue);font-weight:700;font-size:.86rem}
+    .card-link{
+      display:inline-flex;align-items:center;gap:7px;margin-top:5px;font-size:.85rem;font-weight:800;color:var(--navy-2)
+    }
+    .card-link:hover{color:var(--teal)}
+    .mini-methods{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0 0}
+    .mini-methods span{font-size:.71rem;padding:6px 9px;border-radius:999px;background:#f3f6f9;color:#53657b}
+
+    /* CART */
+    .cart-shell{
+      border-radius:30px;padding:40px;
+      background:
+        radial-gradient(circle at 85% 15%,rgba(38,136,128,.18),transparent 28%),
+        linear-gradient(140deg,#0a1830,#112d4e);
+      color:white;box-shadow:var(--shadow);overflow:hidden
+    }
+    .cart-top{display:grid;grid-template-columns:1fr .92fr;gap:48px;align-items:start}
+    .cart-top h3{font:800 clamp(2rem,4vw,3.25rem)/1.08 "Manrope",sans-serif;letter-spacing:-.05em;margin:.6rem 0 1rem}
+    .cart-top p{color:#c1cfde}
+    .cart-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .cart-metric{padding:20px;border-radius:16px;background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.10)}
+    .cart-metric strong{display:block;font:800 1.65rem/1 "Manrope",sans-serif}
+    .cart-metric span{display:block;font-size:.74rem;color:#aebfd1;margin-top:7px}
+    .pipeline{
+      margin-top:38px;display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:stretch
+    }
+    .pipe{
+      min-height:136px;padding:16px 13px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045)
+    }
+    .pipe small{display:block;color:#73cbc1;font-weight:800;letter-spacing:.1em;font-size:.63rem;margin-bottom:13px}
+    .pipe strong{font:700 .84rem/1.3 "Manrope",sans-serif}
+    .pipe span{display:block;font-size:.67rem;color:#9fb1c4;margin-top:6px;line-height:1.45}
+
+    /* TRANSLATION PIPELINE */
+    .translation{display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative}
+    .translation::before{content:"";position:absolute;left:6%;right:6%;top:33px;height:1px;background:#cdd8e4;z-index:0}
+    .step{position:relative;z-index:1;text-align:center;padding:0 8px}
+    .step-num{width:66px;height:66px;margin:0 auto 17px;border-radius:20px;background:white;border:1px solid #dbe5ed;box-shadow:0 8px 22px rgba(13,38,66,.06);display:grid;place-items:center;font:800 .88rem "Manrope",sans-serif;color:var(--teal)}
+    .step h4{font:800 .92rem/1.25 "Manrope",sans-serif;margin:0 0 7px}
+    .step p{font-size:.72rem;color:var(--muted);line-height:1.45;margin:0}
+
+    /* CAPABILITIES */
+    .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .cap{
+      padding:26px;border-radius:20px;border:1px solid var(--line);background:white
+    }
+    .cap-icon{
+      width:42px;height:42px;border-radius:13px;display:grid;place-items:center;
+      background:linear-gradient(135deg,#eaf3f9,#e9f5f3);color:var(--navy-2);font-weight:900;margin-bottom:18px
+    }
+    .cap h3{font:800 1.08rem "Manrope",sans-serif;margin:0 0 8px}
+    .cap p{color:var(--muted);font-size:.83rem;margin:0;line-height:1.65}
+    .cap .anchor{margin-top:13px;color:var(--teal);font-size:.76rem;font-weight:800}
+
+    /* PUBLICATIONS */
+    .pub-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+    .pub-head .section-head{margin:0}
+    .pub-list{border-top:1px solid var(--line)}
+    .pub{
+      display:grid;grid-template-columns:105px 1fr 130px;gap:26px;align-items:start;
+      padding:25px 0;border-bottom:1px solid var(--line)
+    }
+    .pub-year{font:800 .85rem "Manrope",sans-serif;color:var(--teal)}
+    .pub-title{font:700 1.02rem/1.45 "Manrope",sans-serif;color:var(--ink)}
+    .pub-meta{margin-top:5px;color:var(--muted);font-size:.82rem}
+    .pub-role{text-align:right;font-size:.73rem;font-weight:800;color:var(--blue)}
+    .pub a:hover .pub-title{color:var(--blue)}
+    .pub-note{margin-top:3px;color:#8a97aa;font-size:.74rem}
+
+    /* EXPERIENCE */
+    .timeline{max-width:930px}
+    .timeline-item{display:grid;grid-template-columns:170px 1fr;gap:30px;padding:0 0 40px;position:relative}
+    .timeline-item::before{content:"";position:absolute;left:182px;top:9px;bottom:-9px;width:1px;background:#d8e2eb}
+    .timeline-item:last-child::before{display:none}
+    .time{font:700 .81rem "Manrope",sans-serif;color:var(--teal);padding-top:1px}
+    .timeline-body{position:relative;padding-left:22px}
+    .timeline-body::before{content:"";position:absolute;left:-22px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--navy-2);box-shadow:0 0 0 5px white}
+    .timeline-body h3{font:800 1.12rem/1.35 "Manrope",sans-serif;margin:0 0 4px}
+    .timeline-body .place{color:var(--blue);font-weight:700;font-size:.86rem;margin-bottom:9px}
+    .timeline-body p{color:var(--muted);font-size:.88rem;margin:0}
+
+    /* SERVICE */
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .service{padding:23px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+    .service strong{display:block;font:800 1rem/1.35 "Manrope",sans-serif;margin-bottom:7px}
+    .service span{display:block;color:var(--muted);font-size:.78rem;line-height:1.55}
+
+    /* CONTACT */
+    .contact-shell{
+      display:grid;grid-template-columns:1fr .78fr;gap:50px;align-items:center;
+      padding:48px;border-radius:30px;background:white;border:1px solid rgba(255,255,255,.15);color:var(--ink);box-shadow:0 25px 80px rgba(0,0,0,.22)
+    }
+    .contact-shell h2{font:800 clamp(2.2rem,4vw,3.7rem)/1.05 "Manrope",sans-serif;letter-spacing:-.055em;margin:.6rem 0 1rem}
+    .contact-shell p{color:var(--muted)}
+    .contact-actions{display:flex;flex-direction:column;gap:10px}
+    .contact-link{
+      display:flex;justify-content:space-between;align-items:center;gap:15px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);font-size:.88rem;font-weight:700;background:#fbfcfd
+    }
+    .contact-link:hover{border-color:#a8c9d6;background:#f4f9fa}
+    .contact-link span:last-child{color:var(--teal)}
+    footer{padding:28px 0;background:#071321;color:#8fa3b9;font-size:.76rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-inner a{color:#bac8d7}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.show{opacity:1;transform:none}
+    .skip-link{
+      position:fixed;left:18px;top:12px;z-index:1000;padding:10px 14px;border-radius:10px;
+      background:white;color:var(--navy);font-weight:700;box-shadow:var(--shadow-soft);
+      transform:translateY(-150%);transition:transform .2s ease
+    }
+    .skip-link:focus{transform:translateY(0)}
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+      .reveal{opacity:1;transform:none}
+    }
+
+    @media(max-width:1050px){
+      .metric-suite{grid-template-columns:1fr}
+      .urology-achievements{grid-template-columns:repeat(2,1fr)}
+      .academic-summary{grid-template-columns:1fr}
+      .prestige-strip{grid-template-columns:repeat(2,1fr)}
+      .uro-wrap{grid-template-columns:1fr}.uro-aside{position:static}
+      .hero-grid{grid-template-columns:1fr .72fr;gap:35px}
+      .metric-grid{grid-template-columns:repeat(3,1fr)}
+      .metric:nth-child(3){border-right:0}.metric:nth-child(n+4){border-top:1px solid #e9eef4}
+      .metric:nth-child(4){border-right:1px solid #e9eef4}
+      .metric-grid-six .metric:nth-child(3),
+      .metric-grid-six .metric:nth-child(6){border-right:0}
+      .metric-grid-six .metric:nth-child(4),
+      .metric-grid-six .metric:nth-child(5){border-right:1px solid #e9eef4}
+      .about-grid{grid-template-columns:1fr;gap:30px}.about-sticky{position:static}
+      .pipeline{grid-template-columns:repeat(4,1fr)}
+      .translation{grid-template-columns:repeat(4,1fr);gap:18px}.translation::before{display:none}
+      .cap-grid{grid-template-columns:repeat(2,1fr)}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:820px){
+      .section{padding:82px 0}
+      .nav-links{
+        display:none;position:absolute;top:76px;left:20px;right:20px;padding:18px;
+        background:#0d223b;border:1px solid rgba(255,255,255,.1);border-radius:16px;flex-direction:column;align-items:flex-start;gap:13px;
+        box-shadow:0 18px 40px rgba(0,0,0,.20)
       }
-      :root {
-        --accent: #0052cc;
-        --bg-light: #fafbfd;
-        --bg-alt:  #f3f6fa;
-      }
-      html { font-size: 16px; }
-      body {
-        margin: 0;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background: var(--bg-light);
-      }
-      h1,h2,h3,h4,h5,h6{font-weight:600;color:#111;line-height:1.25;margin:0 0 .6em}
-      h1{font-size:1.9rem} h2{font-size:1.6rem} h3{font-size:1.3rem} h4{font-size:1.15rem} h5{font-size:1rem}
-      p{margin:0 0 1.2em} ul{margin:0 0 1.2em 1.5em;padding:0}
-      a{color:var(--accent);text-decoration:none}
-      a:hover,a:focus{text-decoration:underline}
+      .nav-wrap.scrolled .nav-links{background:white;border-color:var(--line)}
+      .nav-links.open{display:flex}.menu{display:block}
+      .hero{min-height:auto}.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:470px;margin-top:20px}
+      .portrait-shell{width:min(360px,88%)}
+      .research-card.big,.research-card.side,.research-card.half{grid-column:1/-1}
+      .cart-top{grid-template-columns:1fr}.pipeline{grid-template-columns:repeat(2,1fr)}
+      .contact-shell{grid-template-columns:1fr;padding:34px}
+    }
+    @media(max-width:620px){
+      .metric-group-head{align-items:flex-start;flex-direction:column;gap:5px}
+      .metric-grid-three{grid-template-columns:repeat(3,1fr)!important}
+      .metric-grid-three .metric{padding:18px 10px}
+      .metric-grid-three .num{font-size:1.35rem}
+      .metric-grid-three .label{font-size:.65rem}
+      .urology-achievements{grid-template-columns:1fr}
+      .academic-summary .summary-points{grid-template-columns:1fr 1fr}
+      .prestige-strip{grid-template-columns:1fr}
+      .focus-sep{display:none}
+      .container{width:min(calc(100% - 28px),var(--max))}
+      .nav{min-height:68px}.nav-links{top:68px}
+      .hero{padding-top:110px}.hero h1{font-size:clamp(3rem,15vw,4.25rem)}
+      .hero-visual{min-height:405px}.orbit{width:390px;height:390px}.orbit.two{width:310px;height:310px}
+      .float-card{min-width:145px;padding:12px}.float-card.one{right:0}.float-card.two{left:0}
+      .metric-grid{grid-template-columns:repeat(2,1fr)}
+      .metric{border-top:1px solid #e9eef4!important;border-right:1px solid #e9eef4!important}
+      .metric:nth-child(-n+2){border-top:0!important}.metric:nth-child(2n){border-right:0!important}
+      .metric-grid:not(.metric-grid-six) .metric:last-child{grid-column:1/-1;border-right:0!important}
+      .metric-grid-six .metric:last-child{grid-column:auto!important;border-right:0!important}
+      .pillars{grid-template-columns:1fr}.pillar{min-height:auto}
+      .cart-shell{padding:26px 20px}.cart-metrics{grid-template-columns:1fr 1fr}
+      .pipeline{grid-template-columns:1fr}.translation{grid-template-columns:repeat(2,1fr)}
+      .cap-grid,.service-grid{grid-template-columns:1fr}
+      .pub-head{align-items:flex-start;flex-direction:column}
+      .pub{grid-template-columns:70px 1fr}.pub-role{grid-column:2;text-align:left;margin-top:-15px}
+      .timeline-item{grid-template-columns:1fr;gap:8px;padding-bottom:30px}
+      .timeline-item::before{display:none}.timeline-body{padding-left:20px}.timeline-body::before{left:0}
+      .hero-actions .btn{width:100%}
+    }
+  </style>
+</head>
 
-      /*─ 2. helpers ─*/
-      .container{width:min(92%,1080px);margin-inline:auto}
-      .left{text-align:left}
-      .image.fit img{width:100%;height:auto;border-radius:8px}
-      .badge-container{display:inline-flex;align-items:center;gap:6px;margin-left:6px}
-
-      /*─ 3. header / nav ─*/
-      #header{
-        position:relative;
-        background:transparent!important;
-        padding:2.5rem 0 2rem;
-        text-align:center;
-      }
-      #header::before{
-        content:"";
-        position:absolute;
-        inset:0;
-        background:url("images/WechatIMG243.jpg") center/cover no-repeat;
-        opacity:0.85;
-        z-index:-1;
-        pointer-events:none;
-      }
-
-      #header header{display:flex;flex-direction:column;align-items:center;gap:.8rem}
-      #header .image.avatar img{width:140px;height:140px;border-radius:50%;object-fit:cover}
-      #nav ul{display:flex;gap:1.2rem;flex-direction:column;list-style:none;margin:1.5rem 0;padding:0;justify-content:center}
-      #nav a{font-weight:600;position:relative;padding:.3rem .1rem}
-      #nav a.active::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:2px;background:var(--accent)}
-      #header footer .icons{display:flex;justify-content:center;gap:1rem;list-style:none;padding:0}
-      .orcid-icon{width:24px;height:24px;vertical-align:middle}
-
-      /*─ 4. sections ─*/
-      section{padding:4rem 0}
-      section:nth-of-type(even){background:var(--bg-alt)}
-      .features article{margin-bottom:3rem}
-
-      /*─ 5. experience lists ─*/
-      .experience-title{margin:2rem 0 .6rem;font-weight:600}
-      .experience-list{margin:0 0 1.2rem 1.5rem;list-style:disc outside}
-      .experience-list li{margin-bottom:.4rem;padding-left:.25rem}
-      .experience-list strong{color:var(--accent)}
-
-      /*─ 6. footer ─*/
-      #footer{background:#e8ecf2;padding:2rem 0;text-align:center}
-      #footer ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
-
-      /*─ 7. responsive ─*/
-      @media(max-width:650px){
-        h1{font-size:1.6rem} h2{font-size:1.4rem}
-      }
-    </style>
-
-    <!-- original theme css -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="icon" href="images/web-icon_avatar.png" />
-  </head>
-
-  <body class="is-preload">
-    <!-- ========== HEADER ========== -->
-    <section id="header">
-      <header>
-        <span class="image avatar"><img src="images/avatar.png" alt="avatar" /></span>
-        <h1 id="logo"><a href="#">Xingyu Chen</a></h1>
-        <p>Baltimore, MD<br/>
-           <a href="https://scholar.google.com/citations?user=Vj8vClIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a><br/>
-           <a href="https://orcid.org/0000-0002-9284-4950" target="_blank">ORCID</a></p>
-      </header>
-      <nav id="nav">
-        <ul>
-          <li><a class="active" href="#about">About Me</a></li>
-          <li><a href="#publications">Research Projects</a></li>
-          <li><a href="#research">Research Experience</a></li>
-          <li><a href="#cv">Academic CV</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+<body>
+  <a class="skip-link" href="#about">Skip to main content</a>
+  <header class="nav-wrap" id="navWrap">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark">XC</span>
+        <span>Xingyu Chen</span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#urologic-oncology">Urologic Oncology</a>
+        <a href="#research">Research</a>
+        <a href="#cart">CAR-T</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </nav>
-      <footer>
-        <ul class="icons">
-          <li><a href="https://x.com/Xingyu_Chen_" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
-          <li><a id="mlink" href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-          <li><a href="https://orcid.org/0000-0002-9284-4950" target="_blank"><img src="images/orcid.png" alt="ORCID" class="orcid-icon"/></a></li>
-        </ul>
-      </footer>
+      <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow hero-kicker">Physician-Scientist · Urologic Oncology & Translational Cancer Research</div>
+          <h1>Xingyu Chen</h1>
+          <div class="credentials">MD, MSc</div>
+          <div class="hero-title">
+            <strong>Decode</strong> cancer ecosystems. <strong>Perturb</strong> causal mechanisms. <strong>Translate</strong> discoveries into therapies.
+          </div>
+          <p class="hero-desc">
+            My primary clinical and scientific focus is <strong>urologic oncology</strong>—particularly bladder and urothelial cancer—while my research extends across broader solid tumors, tumor immunology, and immune-cell therapy. I integrate clinical medicine with cancer genomics, tumor immunology, artificial intelligence, functional genomics, and single-cell & spatial multi-omics to uncover mechanisms of progression, immune escape, therapeutic resistance, and clinically actionable vulnerabilities.
+          </p>
+          <div class="focus-line">
+            <span class="focus-label">PRIMARY FOCUS</span>
+            <span>Urologic Oncology · Urothelial Cancer · Precision Cancer Medicine</span>
+            <span class="focus-sep">|</span>
+            <span class="focus-muted">Broader scope: solid tumors · tumor immunology · CAR-T</span>
+          </div>
+
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#research">
+              Explore Research
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn ghost" href="https://scholar.google.com/citations?user=Vj8vClIAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="btn ghost" href="docs/Xingyu_Chen_CV.pdf" target="_blank" rel="noopener">Academic CV</a>
+          </div>
+
+          <div class="hero-mini">
+            <span>Cancer Genomics</span>
+            <span>Tumor Immunology</span>
+            <span>AI & LLMs</span>
+            <span>Functional Genomics</span>
+            <span>Single-Cell</span>
+            <span>Spatial & 3D Biology</span>
+          
+          <div class="prestige-strip">
+            <div class="prestige-item"><strong>Urologic Oncology</strong><span>Bladder & urothelial cancer</span></div>
+            <div class="prestige-item"><strong>Nature-family × 4</strong><span>Mechanism · immunity · systems biology</span></div>
+            <div class="prestige-item"><strong>U.S. Patent</strong><span>AI radiogenomics</span></div>
+            <div class="prestige-item"><strong>Translational Scope</strong><span>Mechanism → therapy</span></div>
+          </div>
+</div>
+        </div>
+
+        <div class="hero-visual" aria-label="Portrait and research metrics">
+          <div class="orbit"></div>
+          <div class="orbit two"></div>
+          <div class="portrait-shell">
+            <img src="images/avatar.png" alt="Portrait of Xingyu Chen" width="1024" height="1536" decoding="async" fetchpriority="high" />
+          </div>
+          <div class="float-card one">
+            <strong>4</strong>
+            <span>Nature-family research articles</span>
+          </div>
+          <div class="float-card two">
+            <strong>1,063</strong>
+            <span>Google Scholar citations · Aug 2026</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- ========== WRAPPER ========== -->
-    <div id="wrapper">
-      <div id="main">
-
-        <!-- ABOUT -->
-        <section id="about">
-          <span class="image fit"><img src="images/Picture1.png" alt="Picture1" /></span>
-          <div class="container">
-            <header class="major"><h3>About Me</h3></header>
-            <p>
-As a physician–scientist at the crossroads of <strong>immuno-oncology</strong> and <strong>computational biology</strong>, my research seeks to define the next generation of <strong>precision immunotherapies</strong>. I combine AI-driven multi-omics, single-cell, and spatial technologies with experimental models to uncover how cancer cells evade both standard-of-care and experimental treatments.
-</p>
-
-<p>
-My work has revealed novel biomarkers and therapeutic targets in bladder and other solid tumors, leading to the discovery of <strong>loss of the Y chromosome (LOY)</strong> as a fundamental, pan-cancer mechanism of immune escape. As co-first author (<i>Nature</i>, 2023), my team showed that LOY in cancer cells promotes immune evasion and tumor aggressiveness. As first author (<i>Nature</i>, 2025), I demonstrated that LOY in patients’ T cells disrupts anti-tumor immunity, creating a “two-hit” mechanism that accelerates disease progression. These findings uncover new therapeutic vulnerabilities and inform the design of next-generation cellular immunotherapies.
-</p>
-
-<p>
-Looking ahead, my laboratory will pioneer the use of <strong>genomic large language models (LLMs)</strong> and <strong>DNA sequence-to-function architectures</strong> for <i>in silico</i> functional genomics. By integrating predictive AI with high-resolution single-cell and spatial profiling, we aim to: (1) develop novel therapies to reverse LOY-driven immune escape, and (2) build AI-powered biomarkers for early cancer detection and therapeutic response prediction.
-</p>
-
-<p>
-Grounded in clinical oncology and computational science, my vision is to bridge <strong>computational discovery with patient impact</strong>—transforming how we understand, detect, and treat cancer.
-</p>
-
-            <h4>Research Interests</h4>
-            <ul>
-              <li>Bioinformatics and Computational Biology</li>
-              <li>Large Language Models & Foundation AI for Genomics</li>      
-              <li>Single-Cell & Spatial Multi-Omics Integration</li>
-              <li>AI-Powered Predictive Modeling, Radiogenomics & Digital Pathology</li>
-              <li>Cancer Immunotherapy & Tumor Microenvironment Systems Biology</li>
-            </ul>
+    <div class="metrics">
+      <div class="container metric-suite">
+        <div class="metric-group">
+          <div class="metric-group-head">
+            <span class="metric-group-kicker">Scholarly Impact</span>
+            <span class="metric-group-note">Google Scholar · Aug 2026</span>
           </div>
-        </section>
+          <div class="metric-grid metric-grid-three">
+            <div class="metric"><span class="num">1,063</span><span class="label">Citations</span></div>
+            <div class="metric"><span class="num">17</span><span class="label">h-index</span></div>
+            <div class="metric"><span class="num">20</span><span class="label">i10-index</span></div>
+          </div>
+        </div>
 
-        <!-- RESEARCH PROJECTS -->
-        <section id="publications">
-          <div class="container">
-            <header class="major"><h2>Research Projects</h2></header>
+        <div class="metric-group">
+          <div class="metric-group-head">
+            <span class="metric-group-kicker">Research Output</span>
+            <span class="metric-group-note">Peer-reviewed research</span>
+          </div>
+          <div class="metric-grid metric-grid-three">
+            <div class="metric"><span class="num">26</span><span class="label">Publications</span></div>
+            <div class="metric"><span class="num">12</span><span class="label">Lead-author papers</span></div>
+            <div class="metric"><span class="num">4</span><span class="label">Nature-family articles</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <h4>(1) The Role of Y-Chromosome Loss in Immune Modulation and Tumorigenesis</h4>
-            <img src="images/Selected Publications.png" class="img-fluid" alt="Selected Publications" />
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-sticky reveal">
+          <div class="eyebrow">Scientific identity</div>
+          <h2>From clinical question to mechanism to therapy.</h2>
+          <p>
+            My goal is not to specialize in one technology. It is to choose and integrate the right
+            clinical, computational, and experimental approaches to answer important biological questions.
+          </p>
+        </div>
 
-            <div class="features">
-              <!-- 2025 Nature paper -->
-              <article>
-                <div class="image-container">
-                  <h5>Concurrent loss of the Y chromosome in cancer and T cells impacts outcome</h5>
-                  <p><strong>Chen, X</strong>., Shen, Y., Choi, S. et al. Nature 642, 1041–1050 (2025). <strong>First author</strong>.
-                    <a href="https://doi.org/10.1038/s41586-025-09071-2
-        
-        
-        
-        " target="_blank">https://doi.org/10.1038/s41586-025-09071-2
-        
-        
-        
-        a>
-                    <span class="badge-container">
-                      <span class="__dimensions_badge_embed__" data-doi="10.1038/s41586-025-09071-2
-        
-        
-        
-        " data-style="small_circle"></span>
-                      <span class="altmetric-embed" data-doi="10.1038/s41586-025-09071-2
-        
-        
-        
-        
-        
-        " data-badge-type="donut"></span>
-                    </span>
-                  </p>
-                  <p class="left">In our 2025 Nature study (first authored by me), we demonstrated that age-related loss of the Y chromosome (LOY)—which affects up to 40% of elderly men—occurs not only in tumour cells but also spreads to infiltrating T cells; this “double-LOY” condition cripples anti-tumour immunity and predicts the worst survival across 4,000 male cancer samples and more than one million single-cell profiles. Mechanistically, losing key Y-linked genes (KDM5D, UTY, DDX3Y) weakens tumour antigen presentation, while LOY T cells become exhausted (↓ GZMB/PRF1, ↑ PD-1/CTLA-4), offering an explanation for men’s higher cancer burden. These findings argue for routine LOY testing in male-predominant cancers, careful exclusion of LOY T cells from cell therapies, and development of treatments that restore or block LOY-driven immune collapse.</p>
-                  <p class="left"><i>Nature</i> <strong>News & Views (4 June 2025)</strong> spotlighted our Nature paper revealing Y-chromosome loss (LOY) in both tumour cells and infiltrating T cells. Commentators <strong>Nicholas McGranahan (University College London)</strong> and <strong>Rahul Roychoudhuri (University of Cambridge)</strong> contend that this coordinated LOY weakens antitumour immunity, enables escape, and predicts poorer survival. They urge clinicians to assess LOY in both compartments for prognosis, use Y-status to guide immuno- and cell-therapy choices, and investigate how Y-deficient tumours trigger LOY in nearby immune cells to discover new therapeutic targets.</p>
-                  <img src="images/nature12.png" class="img-fluid" alt="nature12"/>
-                  <h5> <strong>Nature Journal Headline</strong></h5>
-                </div>
-              </article>
+        <div class="about-copy reveal">
+          <p class="lead">
+            I am a physician-scientist whose primary disease focus is <strong>urologic oncology</strong>, especially bladder and urothelial cancers, with a broader research program spanning solid tumors and immune-cell therapy. I work at the intersection of <strong>clinical oncology, cancer genomics, tumor immunology, artificial intelligence, functional genomics, and single-cell & spatial systems biology.</strong>
+          </p>
+          <p>
+            My research starts from clinically meaningful problems encountered in oncology—why tumors recur, progress, evade immunity, or resist therapy—and connects patient cohorts with high-dimensional molecular profiling, computational modeling, functional perturbation, and mechanistic validation. Urologic cancers provide a central clinical framework for this work, while the underlying biological questions extend across cancer types.
+          </p>
+          <p>
+            A major focus of my work has been <strong>loss of the Y chromosome (LOY)</strong>. In a co-first-author
+            <em>Nature</em> study in 2023, we established a causal link between Y-chromosome loss in cancer cells,
+            adaptive immune evasion, and response to immune-checkpoint blockade. In a first-author
+            <em>Nature</em> study in 2025, I led pan-cancer analyses integrating more than one million single-cell
+            profiles and clinical cohorts across 29 cancer types to reveal coordinated LOY across tumor and immune
+            compartments and its impact on patient outcome.
+          </p>
+          <p>
+            My work also spans T-cell exhaustion and differentiation, AI-enabled radiogenomics, immunotherapy
+            biomarkers, and current efforts in <strong>CAR-T systems biology and perturbational genomics</strong>.
+            Across these projects, I aim to move from descriptive molecular associations toward causal mechanisms
+            and actionable therapeutic hypotheses.
+          </p>
+          <div class="quote">
+            Clinical observation → study design → multi-omics discovery → AI modeling → functional perturbation
+            → mechanism → therapeutic translation.
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <!-- 2023 Nature paper -->
-              <article>
-                <div class="image-container">
-                  <h5>Y chromosome loss in cancer drives growth by evasion of adaptive immunity</h5>
-                  <p>Abdel-Hafiz, H.A., Schafer, J.M., <strong>Chen, X</strong>. et al. Nature 619, 624-631 (2023). <strong>Co-first author</strong>.
-                    <a href="https://doi.org/10.1038/s41586-023-06234-x
-        
-        " target="_blank">https://doi.org/10.1038/s41586-023-06234-x
-        
-        a>
-                    <span class="badge-container">
-                      <span class="__dimensions_badge_embed__" data-doi="10.1038/s41586-023-06234-x
-        
-        " data-style="small_circle"></span>
-                      <span class="altmetric-embed" data-doi="10.1038/s41586-023-06234-x
-        
-        " data-badge-type="donut"></span>
-                    </span>
-                  </p>
-                  <p class="left">Our 2023 Nature paper (co-first authored by me) delivered the first direct evidence that loss of the Y chromosome (LOY) in cancer cells reshapes anti-tumor immunity. Using mouse models and large human cohorts of bladder cancer, we showed that Y-negative tumors up-regulate PD-L1, drive T-cell exhaustion, and proliferate twice as fast as Y-positive tumors. Paradoxically, the same immune-evasive state renders LOY tumors markedly more responsive to immune-checkpoint blockade (e.g., atezolizumab). <strong>These findings uncover a causal link between sex-chromosome loss and immune escape, offer a mechanistic explanation for the higher incidence and poorer prognosis of many cancers in men, and position LOY as a predictive biomarker for immunotherapy benefit.</strong></p>
-                </div>
-              </article>
+    <section class="section dark">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow" style="color:#7dd0c7">Research philosophy</div>
+          <h2>Decode. Perturb. Translate.</h2>
+          <p>Three connected research pillars organize my work across urologic oncology, pan-cancer biology, computational science, functional genomics, and therapeutic translation.</p>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar reveal">
+            <div class="pillar-index">01 / DECODE</div>
+            <h3>Cancer ecosystems</h3>
+            <p>Resolve how genomic alterations and multicellular states shape tumor evolution, immunity, and treatment response across patients.</p>
+            <div class="tags">
+              <span class="tag">Cancer genomics</span><span class="tag">scRNA/scATAC</span><span class="tag">Spatial omics</span><span class="tag">3D biology</span>
+            </div>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar-index">02 / PERTURB</div>
+            <h3>Establish causality</h3>
+            <p>Use genetic perturbation, regulatory modeling, and AI-enabled in silico experiments to distinguish causal drivers from molecular correlation.</p>
+            <div class="tags">
+              <span class="tag">CRISPR screening</span><span class="tag">Perturb-seq</span><span class="tag">Virtual KO</span><span class="tag">Foundation models</span>
+            </div>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar-index">03 / TRANSLATE</div>
+            <h3>Improve therapy</h3>
+            <p>Connect mechanism to biomarkers, therapeutic targets, rational combinations, and clinically relevant strategies for precision oncology.</p>
+            <div class="tags">
+              <span class="tag">Biomarkers</span><span class="tag">Drug combinations</span><span class="tag">Immunotherapy</span><span class="tag">Clinical translation</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section" id="urologic-oncology">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Primary disease focus</div>
+          <h2>Urologic oncology as the clinical anchor of my research.</h2>
+          <p>
+            My strongest disease-specific body of work is in urologic malignancies—particularly bladder and urothelial cancer—where I have built a sustained research trajectory across tumor immunology, radiogenomics, treatment-response biomarkers, clinical translational studies, and precision oncology.
+          </p>
+        </div>
+
+        <div class="urology-achievements reveal">
+          <div class="urology-achievement"><strong><em>Nature</em> · Co-first author</strong><span>Mechanistic link between Y-chromosome loss, immune evasion, and checkpoint-blockade response in bladder cancer.</span></div>
+          <div class="urology-achievement"><strong>AI Radiogenomics</strong><span>MRI + RNA-seq framework for muscle-invasive bladder cancer staging and precision risk assessment.</span></div>
+          <div class="urology-achievement"><strong>U.S. Patent Application</strong><span>Radiogenomic approach arising from translational bladder-cancer research.</span></div>
+          <div class="urology-achievement"><strong>Clinical Biomarker Studies</strong><span>NAC response, survival stratification, immune-state and treatment-response biomarkers in urothelial cancer.</span></div>
+        </div>
+
+        <div class="uro-wrap">
+          <aside class="uro-aside reveal">
+            <div class="eyebrow" style="color:#7dd0c7">Urologic oncology profile</div>
+            <h3>Clinically grounded, mechanism driven, technology enabled.</h3>
+            <p>
+              My urologic-oncology work spans the full translational spectrum: human cohorts, genomic and immune profiling,
+              AI-enabled imaging, mechanistic tumor–immune biology, treatment-response modeling, and therapeutic hypothesis generation.
+            </p>
+            <div class="uro-tags">
+              <span>Bladder cancer</span>
+              <span>Urothelial cancer</span>
+              <span>Upper tract urothelial carcinoma</span>
+              <span>Immunotherapy</span>
+              <span>Neoadjuvant therapy</span>
+              <span>Radiogenomics</span>
+              <span>Precision oncology</span>
+            </div>
+            <div class="leadership-note">
+              Urologic oncology is my primary disease domain, but not my scientific boundary: the same frameworks are extended to pan-cancer tumor immunity, solid tumors, and CAR-T biology.
+            </div>
+          </aside>
+
+          <div class="uro-list">
+            <article class="uro-item reveal">
+              <div class="uro-kicker">Bladder cancer · tumor immunology</div>
+              <h4>Immune-state and checkpoint-response biomarkers in bladder cancer</h4>
+              <p>
+                My early first/co-first-author work defined CD8⁺ T-effector, immune-checkpoint, pyroptosis, and tumor-microenvironment programs associated with prognosis and immunotherapy response in bladder cancer, establishing the clinical and biological foundation for my later work on tumor–immune co-evolution.
+              </p>
+              <div class="impact">Representative publications: Oncogene 2021 · Frontiers in Immunology 2021</div>
+            </article>
+
+            <article class="uro-item reveal">
+              <div class="uro-kicker">Bladder cancer · mechanism & immunotherapy</div>
+              <h4>Y-chromosome loss as a causal driver of immune evasion</h4>
+              <p>
+                In a co-first-author <em>Nature</em> study, I helped connect a genomic alteration observed in bladder cancer to altered T-cell states, adaptive immune escape, clinical outcome, and differential sensitivity to immune-checkpoint blockade—illustrating a direct path from human tumor genomics to mechanism and therapeutic relevance.
+              </p>
+              <div class="impact">Nature 2023 · Co-first author</div>
+            </article>
+
+            <article class="uro-item reveal">
+              <div class="uro-kicker">Precision staging · AI radiogenomics</div>
+              <h4>MRI + RNA-seq + AI for muscle-invasive bladder cancer</h4>
+              <p>
+                I co-developed radiogenomic approaches integrating quantitative MRI and tumor transcriptomics for more accurate staging and risk assessment in muscle-invasive bladder cancer. This work contributed to a U.S. patent application and reflects my interest in translating computational models into clinically useful tools.
+              </p>
+              <div class="impact">International Journal of Molecular Sciences 2024 · U.S. Patent Application No. 2024/0360518</div>
+            </article>
+
+            <article class="uro-item reveal">
+              <div class="uro-kicker">Clinical translation · treatment stratification</div>
+              <h4>Molecular stratification of patients receiving neoadjuvant chemotherapy</h4>
+              <p>
+                My clinical translational work includes qPCR-based survival stratification in NAC-treated muscle-invasive bladder cancer and upper-tract urothelial carcinoma projects focused on treatment response and outcome prediction—bridging molecular profiling with real-world therapeutic decision making.
+              </p>
+              <div class="impact">Journal of Translational Medicine 2026 · First-author clinical translational research</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section soft" id="research">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Selected research contributions</div>
+          <h2>Disease-focused depth, pan-cancer reach, and translational impact.</h2>
+          <p>Urologic oncology is the clinical anchor of my work; the same computational, immunologic, and functional frameworks extend across pan-cancer biology and cell therapy.</p>
+        </div>
+
+        <div class="research-grid">
+          <article class="research-card big reveal">
+            <div class="card-top">
+              <div class="paper-type">Tumor–immune co-evolution</div>
+              <div class="journal">Nature · 2025</div>
+            </div>
+            <div class="card-body">
+              <div class="role">FIRST AUTHOR</div>
+              <h3>Concurrent loss of the Y chromosome in cancer and T cells impacts outcome</h3>
+              <p>
+                I developed and led a pan-cancer framework integrating bulk tumors, paired tumor–blood cohorts,
+                more than one million single-cell profiles, and spatial analyses across 29 cancer types. The work
+                expanded LOY from a tumor-cell alteration into a feature of the broader tumor–immune ecosystem.
+              </p>
+              <div class="mini-methods">
+                <span>Pan-cancer genomics</span><span>&gt;1M single cells</span><span>Spatial biology</span><span>Clinical outcome modeling</span>
+              </div>
+              <a class="card-link" target="_blank" rel="noopener" href="https://doi.org/10.1038/s41586-025-09071-2">
+                View publication →
+              </a>
+            </div>
+          </article>
+
+          <article class="research-card side reveal">
+            <div class="card-top">
+              <div class="paper-type">Mechanism & immunotherapy</div>
+              <div class="journal">Nature · 2023</div>
+            </div>
+            <div class="card-body">
+              <div class="role">CO-FIRST AUTHOR</div>
+              <h3>Y chromosome loss drives growth by evasion of adaptive immunity</h3>
+              <p>
+                Co-led human single-cell, clinical-cohort, and translational analyses linking Y-negative tumors
+                to altered T-cell states, immune escape, adverse outcome, and enhanced sensitivity to immune-checkpoint blockade.
+              </p>
+              <div class="mini-methods">
+                <span>Human cohorts</span><span>Single-cell</span><span>Mouse models</span><span>Checkpoint blockade</span>
+              </div>
+              <a class="card-link" target="_blank" rel="noopener" href="https://doi.org/10.1038/s41586-023-06234-x">
+                View publication →
+              </a>
+            </div>
+          </article>
+
+          <article class="research-card half reveal">
+            <div class="card-top">
+              <div class="paper-type">Systems immunology</div>
+              <div class="journal">Nature · 2025</div>
+            </div>
+            <div class="card-body">
+              <h3>Proteotoxic stress response drives T cell exhaustion and immune evasion</h3>
+              <p>
+                Led pan-cancer human single-cell dataset assembly, integrative analysis, and immunotherapy-cohort validation connecting stress programs with T-cell exhaustion and therapy resistance.
+              </p>
+              <div class="mini-methods"><span>Pan-cancer scRNA-seq</span><span>T-cell states</span><span>Immunotherapy cohorts</span></div>
+              <a class="card-link" target="_blank" rel="noopener" href="https://doi.org/10.1038/s41586-025-09539-1">View publication →</a>
+            </div>
+          </article>
+
+          <article class="research-card half reveal">
+            <div class="card-top">
+              <div class="paper-type">T-cell regulatory biology</div>
+              <div class="journal">Nature Immunology · 2026</div>
+            </div>
+            <div class="card-body">
+              <h3>ZFP148 is a transcriptional repressor of cytolytic effector CD8⁺ T-cell differentiation</h3>
+              <p>
+                This work extends my research from observational immune states toward functional regulation of cytotoxic T-cell differentiation and supports my growing focus on perturbational genomics.
+              </p>
+              <div class="mini-methods"><span>CD8⁺ T cells</span><span>Transcriptional regulation</span><span>Functional genomics</span></div>
+              <a class="card-link" target="_blank" rel="noopener" href="https://doi.org/10.1038/s41590-026-02461-2">View publication →</a>
+            </div>
+          </article>
+
+          <article class="research-card big reveal">
+            <div class="card-top">
+              <div class="paper-type">Urologic oncology · precision medicine</div>
+              <div class="journal">AI · Patent · Clinical cohorts</div>
+            </div>
+            <div class="card-body">
+              <h3>A sustained translational program in bladder and urothelial cancer</h3>
+              <p>
+                My urologic-oncology research integrates bladder and urothelial cancer cohorts with MRI, RNA-seq, machine learning, tumor-immune signatures, treatment-response modeling, and mechanistic tumor-immunity studies. This body of work spans immunotherapy biomarkers, neoadjuvant-treatment stratification, AI radiogenomics, and a U.S. patent application—forming the disease-specific foundation of my broader translational cancer research.
+              </p>
+              <div class="mini-methods">
+                <span>MRI + RNA-seq</span><span>Machine learning</span><span>MIBC</span><span>Immunotherapy biomarkers</span><span>Precision staging</span>
+              </div>
+              <a class="card-link" target="_blank" rel="noopener" href="https://doi.org/10.3390/ijms25010088">View radiogenomics paper →</a>
+            </div>
+          </article>
+
+          <article class="research-card side reveal">
+            <div class="card-top">
+              <div class="paper-type">Clinical translational study</div>
+              <div class="journal">J Transl Med · 2026</div>
+            </div>
+            <div class="card-body">
+              <h3>qPCR-based survival stratification in NAC-treated muscle-invasive bladder cancer</h3>
+              <p>
+                A clinically focused gene-signature study connecting molecular profiling with outcome stratification in patients receiving neoadjuvant chemotherapy.
+              </p>
+              <div class="mini-methods"><span>Clinical cohorts</span><span>qPCR</span><span>NAC</span><span>Survival stratification</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cart">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Current flagship program</div>
+          <h2>CAR-T systems biology & functional genomics.</h2>
+          <p>Connecting patient-derived single-cell states with response, epigenetic regulation, functional perturbation, and AI-enabled causal prioritization.</p>
+        </div>
+
+        <div class="cart-shell reveal">
+          <div class="cart-top">
+            <div>
+              <div class="eyebrow" style="color:#7dd0c7">Building a cross-cancer CAR-T atlas</div>
+              <h3>From millions of CAR-T cells to causal regulators of immune function.</h3>
+              <p>
+                I am building a harmonized single-cell CAR-T resource spanning hematologic malignancies and solid tumors,
+                multiple treatment stages, disease contexts, and—across most cohorts—clinical response annotations.
+                The resource is designed not simply for descriptive atlas building, but as a foundation for functional
+                interrogation of the cellular programs that determine CAR-T expansion, persistence, cytotoxicity, signaling,
+                differentiation, and dysfunction.
+              </p>
+              <p>
+                I integrate the patient-derived atlas with <strong style="color:white">CRISPR screening, Perturb-seq,
+                regulatory-network inference, virtual knockout, in silico perturbation, and genomic foundation models</strong>
+                to investigate how epigenetic and transcriptional regulators shape immune-cell function and therapeutic response.
+              </p>
             </div>
 
-            <h4>(2) Multi-Omics Biomarker Toolkit Driving Precision Oncology in Urologic Cancers</h4>
-            <p class="left">My biomarker work spans several studies that converge on three advances: (1) <strong>AI-powered radiogenomics that pairs MRI with RNA-seq </strong> to stage muscle-invasive bladder cancer more accurately than imaging alone; (2) multi-omics immune signatures—covering <strong> pyroptosis, hypoxia, autophagy, ferroptosis, m6A and CD8-T-effector checkpoints</strong>—that stratify patients and predict checkpoint-inhibitor benefit across bladder, ovarian and other cancers; and (3) mechanistic discoveries (e.g., KDM5D/UTY loss, SRSF10-CDC25A splicing, lncRNA FOXD1-AS1) that reveal druggable pathways driving <strong>tumour metabolism and immune escape</strong>, together forming a toolkit for precision oncology.</p>
-
-            <ol>
-              <li>Qureshi TA*, <strong>Chen X*</strong>, Xie Y, Murakami K, Sakatani T, Kita Y, Kobayashi T, Miyake M, Knott SRV, Li D et al: MRI/RNA-Seq-Based Radiogenomics and Artificial Intelligence for More Accurate Staging of Muscle-Invasive Bladder Cancer. <em>Int J Mol Sci</em> 2023, 25(1). <strong>(Co-first author)</strong></li>
-              <li><strong>Chen X</strong>, Xu R, He D, Zhang Y, Chen H, Zhu Y, Cheng Y, Liu R, Zhu R, Gong L et al: CD8(+) T effector and immune checkpoint signatures predict prognosis and responsiveness to immunotherapy in bladder cancer. <em>Oncogene</em> 2021, 40(43):6223-6234. <strong>(First author)</strong></li>
-              <li><strong>Chen X*</strong>, Chen H*, Yao H, Zhao K, Zhang Y, He D, Zhu Y, Cheng Y, Liu R, Zhu R, Gong L et al: Turning up the heat on non-immunoreactive tumors: pyroptosis influences the tumor immune microenvironment in bladder cancer. <em>Oncogene</em> 2021, 40(45):6381-6393. <strong>(Co-first author)</strong></li>
-              <li><strong>Chen X*</strong>, Lan H*, He D, Zhu Y, Xiao M, Lan H, Wang Z, Cao K: Analysis of Tumor Microenvironment Characteristics in Bladder Cancer: Implications for Immune Checkpoint Inhibitor Therapy. <em>Front Immunol</em> 2021, 12:672158. <strong>(Co-first author)</strong></li>
-              <li><strong>Chen X*</strong>, Lan H*, He D, Xu R, Zhang Y, Cheng Y, Chen H, Xiao S, Cao K: Multi-Omics Profiling Identifies Risk Hypoxia-Related Signatures for Ovarian Cancer Prognosis. <em>Front Immunol</em> 2021, 12:645839. <strong>(Co-first author)</strong></li>
-              <li><strong>Chen X*</strong>, Lan H*, He D, Wang Z, Xu R, Yuan J, Xiao M, Zhang Y, Gong L, Xiao S et al: Analysis of Autophagy-Related Signatures Identified Two Distinct Subtypes for Evaluating the Tumor Immune Microenvironment and Predicting Prognosis in Ovarian Cancer. <em>Front Oncol</em> 2021, 11:616133. <strong>(Co-first author)</strong></li>
-              <li><strong>Chen X</strong>, Jin Y, Gong L, He D, Cheng Y, Xiao M, Zhu Y, Wang Z, Cao K: Bioinformatics Analysis Finds Immune Gene Markers Related to the Prognosis of Bladder Cancer. <em>Front Genet</em> 2020, 11:607. <strong>(First author)</strong></li>
-              <li>Deng H, Tang F, Zhou M, Shan D, <strong>Chen X*</strong>, Cao K*: Identification and Validation of N6-Methyladenosine-Related Biomarkers for Bladder Cancer: Implications for Immunotherapy. <em>Front Oncol</em> 2022, 12:820242. <strong>(Co-corresponding author)</strong></li>
-            </ol>
-            <p>*These authors contributed equally</p>
+            <div class="cart-metrics">
+              <div class="cart-metric"><strong>&gt;20</strong><span>single-cell studies</span></div>
+              <div class="cart-metric"><strong>&gt;300</strong><span>patients</span></div>
+              <div class="cart-metric"><strong>Millions</strong><span>of single cells</span></div>
+              <div class="cart-metric"><strong>&gt;10</strong><span>cancer types</span></div>
+              <div class="cart-metric"><strong>Heme + Solid</strong><span>malignancies</span></div>
+              <div class="cart-metric"><strong>Most cohorts</strong><span>with response annotation</span></div>
+            </div>
           </div>
-        </section>
 
-        <!-- RESEARCH EXPERIENCE -->
-        <section id="research">
-          <div class="container">
-            <header class="major"><h2>Research Experience</h2></header>
-
-            <h4 class="experience-title">Research Bioinformatician I — Cedars-Sinai Medical Center (2022–2024)</h4>
-            <ul class="experience-list">
-              <li>Led four independent bioinformatics projects on tumor evolution, immunotherapy biomarkers, and spatial proteomics.</li>
-              <li>Supervised two junior scientists, collaborated across six labs, and delivered analyses supporting NIH-funded grants.</li>
-              <li>Published high-impact findings, including a <em>Nature</em> paper on Y-chromosome loss and immune evasion in bladder cancer.</li>
-            </ul>
-
-            <h4 class="experience-title">Research Associate I & Visiting Graduate Student — Cedars-Sinai Medical Center (2021–2022)</h4>
-            <ul class="experience-list">
-              <li>Integrated RNA-seq, ATAC-seq, and single-cell data to explore tumor microenvironment landscapes.</li>
-              <li>Contributed to radiogenomics and multi-modal cancer staging using AI-enhanced MRI and RNA-seq datasets.</li>
-              <li>Co-first author on three peer-reviewed publications during this period.</li>
-            </ul>
-
-            <h4 class="experience-title">Early Researcher — Third Xiangya Hospital, Central South University (2020–2021)</h4>
-            <ul class="experience-list">
-              <li>Conducted immunogenomic analyses on clinical samples from bladder and ovarian cancer patients.</li>
-              <li>Initiated development of PyroScore and IMS scoring systems, which became key predictive models in later publications.</li>
-            </ul>
+          <div class="pipeline" aria-label="CAR-T project workflow">
+            <div class="pipe"><small>01 · BUILD</small><strong>Patient CAR-T atlas</strong><span>Cross-study harmonization and longitudinal cell states</span></div>
+            <div class="pipe"><small>02 · DISCOVER</small><strong>Response programs</strong><span>Expansion, memory, cytotoxicity, dysfunction</span></div>
+            <div class="pipe"><small>03 · MODEL</small><strong>Regulatory networks</strong><span>Epigenetic and transcriptional regulators</span></div>
+            <div class="pipe"><small>04 · PERTURB</small><strong>CRISPR & Perturb-seq</strong><span>Functional evidence at single-cell resolution</span></div>
+            <div class="pipe"><small>05 · SIMULATE</small><strong>Virtual perturbation</strong><span>In silico KO and foundation-model prioritization</span></div>
+            <div class="pipe"><small>06 · VALIDATE</small><strong>Causal mechanisms</strong><span>Prioritize experimentally testable regulators</span></div>
+            <div class="pipe"><small>07 · TRANSLATE</small><strong>Optimize therapy</strong><span>Persistence, function, and therapeutic response</span></div>
           </div>
-        </section>
-
-        <!-- ACADEMIC CV -->
-        <section id="cv">
-          <div class="container">
-            <header class="major"><h2>Academic CV</h2></header>
-
-            <h4><strong>Previous Roles</strong></h4>
-            <ul>
-              <li><strong>Research Bioinformatician I</strong>, Cedars-Sinai Medical Center, 2022.08–2024.07</li>
-              <li><strong>Research Associate I</strong>, Cedars-Sinai, 2022.04–2022.08</li>
-              <li><strong>Visiting Graduate Student</strong>, Cedars-Sinai, 2021.09–2022.03</li>
-            </ul>
-
-            <h4>Skills</h4>
-            <ul>
-              <li><strong>Programming:</strong> R, Python, Linux</li>
-              <li><strong>Omics:</strong> RNA-seq, ATAC-seq, scRNA-seq, DNA methylation, WGS/WES</li>
-              <li><strong>AI/ML:</strong> WGCNA, LASSO, Deep Learning, Random Forest</li>
-              <li><strong>Large language model in Genomics:</strong> Pretraining & fine-tuning LLMs · genomic transformer Enformer · Borzoi language model · Decima scheduling RL</li>
-              <li><strong>Tools:</strong> CellRanger, Seurat, SCENIC, BioRender, Adobe Illustrator</li>
-            </ul>
-
-            <h4>Editorial & Peer Review Roles</h4>
-            <ul>
-              <li><strong>Youth Editor:</strong> <i>iMeta</i> (IF 33.2); <i>Asian Journal of Pharmaceutical Sciences</i> (IF 11.9); <i>Journal of Translational Internal Medicine</i> (IF 7.4) etc.</li>
-              <li><strong>Review Editor:</strong> <i>Frontiers in Urology</i> (IF 1.1) etc.</li>
-              <li><strong>Reviewer:</strong> <i>iMeta</i> (IF 33.2), <i>Oncogene</i> (IF 7.3), <i>Frontiers in Immunology</i> (IF 5.9), <i>Seminars in Cancer Biology</i> (IF 12.1) etc.</li>
-            </ul>
-
-            <h4>Invited Presentations</h4>
-            <ul class="left">
-              <li><strong>American Society of Clinical Oncology (ASCO) Annual Meeting 2023</strong>:
-                <ul>
-                  <li>X Chen, M Basu, S Knott, D Theodorescu. <i>CDH12 drives the development of the neuronal subtype in MIBC.</i> <i>Journal of Clinical Oncology</i> 41 (16_suppl), e16579-e16579, 2023 (Abstract)</li>
-                  <li>X Chen, T Qureshi, Y Xie, S Knott, D Li, CJ Rosser, H Furuya. <i>Radiogenomics of muscle invasive bladder cancer.</i> <i>Journal of Clinical Oncology</i> 41 (16_suppl), e16587-e16587, 2023 (Abstract)</li>
-                </ul>
-              </li>
-              <li><strong>American Urological Association (AUA) Annual Meeting 2023 – Chicago, IL</strong>:
-                <ul>
-                  <li><em>Oral Presentation, Breakthrough abstract (LBA03-09)</em>: X Chen (Speaker), M Basu, S Knott, D Theodorescu. <i>CDH12 Drives The Development Of The Neuronal Subtype in Muscle Invasive Bladder Cancer.</i> <i>The Journal of Urology</i> 209 (Supplement 4), e1195, 2023</li>
-                  <li><em>Oral Presentation, Breakthrough abstract (LBA03-05)</em>: TA Qureshi, X Chen (Speaker), Y Xie, K Murakami, T Sakatani, M Miyake, … <i>Radiogenomics Of Muscle Invasive Bladder Cancer.</i> <i>The Journal of Urology</i> 209 (Supplement 4), e1193, 2023</li>
-                </ul>
-              </li>
-              <li><strong>American Urological Association (AUA) Annual Meeting 2025 – Las Vegas, NV</strong>:
-                <ul>
-                  <li>Shen Y, Chen X, Choi S, Knott SRV, Theodorescu D. <i>IP14-09 Y Chromosome Loss Promotes Neuroendocrine Differentiation In Bladder Cancer.</i> <i>The Journal of Urology</i> 213(5S): e750, 2025</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact">
-          <div class="container">
-            <header class="major"><h2>Contact</h2></header>
-            <p>Email: <a href="mailto:xchen295@jh.edu">xchen295@jh.edu</a></p>
-            <p>Location: Baltimore, MD</p>
-            <p>Download my current CV: <a href="https://cheery-sorbet-5f1409.netlify.app/docs/Xingyu_Chen_CV.pdf" target="_blank">PDF Version</a></p>
-            <ul class="icons">
-              <li><a href="https://x.com/Xingyu_Chen_" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
-              <li><a href="https://scholar.google.com/citations?user=Vj8vClIAAAAJ&hl=en&oi=ao" class="icon solid fa-graduation-cap" target="_blank"><span class="label">Google Scholar</span></a></li>
-              <li><a href="https://orcid.org/0000-0002-9284-4950" target="_blank"><img src="images/orcid.png" alt="ORCID" class="orcid-icon"/></a></li>
-            </ul>
-          </div>
-        </section>
-      </div>
-    </div><!-- /wrapper -->
-
-    <!-- FOOTER -->
-    <section id="footer">
-      <div class="container">
-        <ul>
-          <li>&copy; 2025 Xingyu Chen</li>
-          <li>Design: Read Only by ajlkn via <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
-        </ul>
+        </div>
       </div>
     </section>
 
-    <!-- scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>document.getElementById("mlink").href="mailto:xchen295@jh.edu";</script>
-    <script src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
-    <script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-  </body>
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">How I approach a research problem</div>
+          <h2>A translational workflow built around the patient.</h2>
+          <p>Technology is selected to answer the biological and clinical question—not the other way around.</p>
+        </div>
+        <div class="translation reveal">
+          <div class="step"><div class="step-num">01</div><h4>Clinical Question</h4><p>Unmet need, response, resistance, progression</p></div>
+          <div class="step"><div class="step-num">02</div><h4>Study Design</h4><p>Cohorts, longitudinal samples, clinical endpoints</p></div>
+          <div class="step"><div class="step-num">03</div><h4>Deep Phenotyping</h4><p>Genomics, single-cell, spatial & 3D biology</p></div>
+          <div class="step"><div class="step-num">04</div><h4>AI & Modeling</h4><p>ML, LLMs, foundation models, networks</p></div>
+          <div class="step"><div class="step-num">05</div><h4>Perturbation</h4><p>CRISPR, Perturb-seq, virtual KO</p></div>
+          <div class="step"><div class="step-num">06</div><h4>Mechanism</h4><p>Cell states, interactions, causal regulators</p></div>
+          <div class="step"><div class="step-num">07</div><h4>Translation</h4><p>Targets, biomarkers, combinations, clinical hypothesis</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Integrated capabilities</div>
+          <h2>Clinical depth + computational breadth + functional validation.</h2>
+          <p>My strength is the ability to connect these domains into one coherent research program.</p>
+        </div>
+
+        <div class="cap-grid">
+          <article class="cap reveal">
+            <div class="cap-icon">01</div><h3>Urologic & Translational Oncology</h3>
+            <p>Urologic oncology, clinical question formulation, patient cohorts, longitudinal outcomes, biomarker development, treatment response and resistance, translational study design.</p>
+            <div class="anchor">Primary disease focus: bladder & urothelial cancer</div>
+          </article>
+          <article class="cap reveal">
+            <div class="cap-icon">02</div><h3>Computational Biology & AI</h3>
+            <p>R, Python, Linux, machine learning, deep learning, LLM-assisted research workflows, genomic foundation models, reproducible large-scale analysis.</p>
+            <div class="anchor">AI as an active scientific tool, not a label</div>
+          </article>
+          <article class="cap reveal">
+            <div class="cap-icon">03</div><h3>Single-Cell, Spatial & 3D Biology</h3>
+            <p>sc/snRNA-seq, scATAC-seq, spatial transcriptomics and proteomics, CosMx, CODEX, GeoMx, Visium, Xenium, emerging 3D spatial approaches.</p>
+            <div class="anchor">Resolve multicellular tumor ecosystems</div>
+          </article>
+          <article class="cap reveal">
+            <div class="cap-icon">04</div><h3>Functional & Perturbational Genomics</h3>
+            <p>CRISPR screening, Perturb-seq, regulatory networks, virtual knockout, in silico perturbation, functional target prioritization.</p>
+            <div class="anchor">Applied directly in the CAR-T research program</div>
+          </article>
+          <article class="cap reveal">
+            <div class="cap-icon">05</div><h3>Experimental Design & Validation</h3>
+            <p>IHC/IF, western blot, co-culture and functional assays, animal models, clinical-sample processing, mechanistic validation and interdisciplinary project design.</p>
+            <div class="anchor">Designed to establish causality</div>
+          </article>
+          <article class="cap reveal">
+            <div class="cap-icon">06</div><h3>Precision Therapeutics</h3>
+            <p>Therapeutic vulnerabilities, rational combinations, immunotherapy, response biomarkers, patient stratification, and clinically actionable hypotheses.</p>
+            <div class="anchor">Return discoveries to patient care</div>
+          </article>
+        </div>
+
+        <div class="academic-summary reveal">
+          <div>
+            <h3>Academic profile</h3>
+            <p>
+              My work combines disease-specific depth in urologic oncology with methodological breadth across cancer genomics,
+              immunology, AI, functional genomics, and spatial systems biology. The goal is a research program that can move
+              naturally between patient-derived observations, mechanistic biology, and therapeutic translation.
+            </p>
+          </div>
+          <div class="summary-points">
+            <div class="summary-point"><strong>Primary disease domain</strong><span>Bladder & urothelial cancer</span></div>
+            <div class="summary-point"><strong>Broader cancer scope</strong><span>Solid tumors & pan-cancer immunology</span></div>
+            <div class="summary-point"><strong>Emerging program</strong><span>CAR-T systems & perturbational genomics</span></div>
+            <div class="summary-point"><strong>Translational endpoint</strong><span>Biomarkers, targets & therapy</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="publications">
+      <div class="container">
+        <div class="pub-head">
+          <div class="section-head reveal">
+            <div class="eyebrow">Selected publications</div>
+            <h2>A publication trajectory from urologic oncology to mechanism, systems biology, and causality.</h2>
+            <p>Selected from 26 peer-reviewed publications. Google Scholar metrics updated August 2026.</p>
+          </div>
+          <a class="btn" style="border:1px solid var(--line);color:var(--navy-2);background:white" href="https://scholar.google.com/citations?user=Vj8vClIAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Full record on Google Scholar →</a>
+        </div>
+
+        <div class="pub-list reveal">
+          <a class="pub" href="https://doi.org/10.1038/s41586-025-09071-2" target="_blank" rel="noopener">
+            <div class="pub-year">2025</div>
+            <div><div class="pub-title">Concurrent loss of the Y chromosome in cancer and T cells impacts outcome</div><div class="pub-meta"><em>Nature</em> 642, 1041–1050</div><div class="pub-note">Pan-cancer genomics · &gt;1M single cells · tumor–immune co-evolution</div></div>
+            <div class="pub-role">FIRST AUTHOR</div>
+          </a>
+
+          <a class="pub" href="https://doi.org/10.1038/s41586-023-06234-x" target="_blank" rel="noopener">
+            <div class="pub-year">2023</div>
+            <div><div class="pub-title">Y chromosome loss in cancer drives growth by evasion of adaptive immunity</div><div class="pub-meta"><em>Nature</em> 619, 624–631</div><div class="pub-note">Tumor immunology · causal mechanism · checkpoint blockade</div></div>
+            <div class="pub-role">CO-FIRST AUTHOR</div>
+          </a>
+
+          <a class="pub" href="https://doi.org/10.1038/s41586-025-09539-1" target="_blank" rel="noopener">
+            <div class="pub-year">2025</div>
+            <div><div class="pub-title">Proteotoxic stress response drives T cell exhaustion and immune evasion</div><div class="pub-meta"><em>Nature</em> 647, 1025–1035</div><div class="pub-note">Single-cell systems immunology · exhaustion · therapy resistance</div></div>
+            <div class="pub-role">CO-AUTHOR</div>
+          </a>
+
+          <a class="pub" href="https://doi.org/10.1038/s41590-026-02461-2" target="_blank" rel="noopener">
+            <div class="pub-year">2026</div>
+            <div><div class="pub-title">ZFP148 is a transcriptional repressor of cytolytic effector CD8⁺ T-cell differentiation</div><div class="pub-meta"><em>Nature Immunology</em> 27, 827–840</div><div class="pub-note">T-cell differentiation · transcriptional regulation · functional genomics</div></div>
+            <div class="pub-role">CO-AUTHOR</div>
+          </a>
+
+          <div class="pub">
+            <div class="pub-year">2026</div>
+            <div><div class="pub-title">A bladder cancer–associated gene signature for exploratory qPCR-based survival stratification in NAC-treated muscle-invasive bladder cancer</div><div class="pub-meta"><em>Journal of Translational Medicine</em></div><div class="pub-note">Clinical translation · neoadjuvant chemotherapy · survival stratification</div></div>
+            <div class="pub-role">FIRST AUTHOR</div>
+          </div>
+
+          <a class="pub" href="https://doi.org/10.3390/ijms25010088" target="_blank" rel="noopener">
+            <div class="pub-year">2024</div>
+            <div><div class="pub-title">MRI/RNA-seq-based radiogenomics and artificial intelligence for more accurate staging of muscle-invasive bladder cancer</div><div class="pub-meta"><em>International Journal of Molecular Sciences</em> 25, 88</div><div class="pub-note">MRI · RNA-seq · AI · U.S. patent application</div></div>
+            <div class="pub-role">CO-FIRST AUTHOR</div>
+          </a>
+
+          <a class="pub" href="https://doi.org/10.1038/s41388-021-02019-6" target="_blank" rel="noopener">
+            <div class="pub-year">2021</div>
+            <div><div class="pub-title">CD8⁺ T-effector and immune-checkpoint signatures predict prognosis and responsiveness to immunotherapy in bladder cancer</div><div class="pub-meta"><em>Oncogene</em> 40, 6223–6234</div><div class="pub-note">Tumor immune microenvironment · immunotherapy biomarkers</div></div>
+            <div class="pub-role">FIRST AUTHOR</div>
+          </a>
+
+          <a class="pub" href="https://doi.org/10.1038/s41388-021-02024-9" target="_blank" rel="noopener">
+            <div class="pub-year">2021</div>
+            <div><div class="pub-title">Turning up the heat on non-immunoreactive tumors: pyroptosis influences the tumor immune microenvironment in bladder cancer</div><div class="pub-meta"><em>Oncogene</em> 40, 6381–6393</div><div class="pub-note">Pyroptosis · immune states · bladder cancer</div></div>
+            <div class="pub-role">CO-FIRST AUTHOR</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Experience & training</div>
+          <h2>Built across medicine, oncology, computational genomics, and translational research.</h2>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="time">Aug 2024 — Present</div>
+            <div class="timeline-body">
+              <h3>Research Bioinformatician I · Research Collaboration Appointment</h3>
+              <div class="place">Cedars-Sinai Medical Center · Center for Bioinformatics and Functional Genomics · Department of Urology</div>
+              <p>Lead computational and translational analyses in urologic oncology and broader cancer biology, integrating cancer genomics, tumor immunology, single-cell and spatial multi-omics, with active development of CAR-T systems biology and functional-genomics programs.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">Aug 2023 — Aug 2024</div>
+            <div class="timeline-body">
+              <h3>Research Bioinformatician I · Full-Time</h3>
+              <div class="place">Cedars-Sinai Medical Center · Los Angeles, CA</div>
+              <p>Led large-scale pan-cancer, single-cell, spatial and clinical-cohort analyses contributing to Nature-family publications, reproducible multi-omics pipelines, and radiogenomic precision-oncology projects.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">Apr 2022 — Aug 2022</div>
+            <div class="timeline-body">
+              <h3>Research Associate I</h3>
+              <div class="place">Cedars-Sinai Medical Center · Los Angeles, CA</div>
+              <p>Integrated genomic, single-cell and translational datasets in bladder cancer and tumor immunology, contributing to mechanistic and radiogenomic studies.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">Sep 2021 — Mar 2022</div>
+            <div class="timeline-body">
+              <h3>Visiting Graduate Student</h3>
+              <div class="place">Cedars-Sinai Medical Center · Los Angeles, CA</div>
+              <p>Research training in cancer genomics, tumor microenvironment biology, and translational urologic oncology.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">2024 — 2025</div>
+            <div class="timeline-body">
+              <h3>Doctoral Research Training</h3>
+              <div class="place">Johns Hopkins University · Baltimore, MD</div>
+              <p>Completed first-year doctoral coursework and laboratory rotations; training concluded in August 2025.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">2020 — 2023</div>
+            <div class="timeline-body">
+              <h3>Master of Medicine in Oncology</h3>
+              <div class="place">Xiangya School of Medicine, Central South University · Changsha, China</div>
+              <p>Clinical oncology and translational research training; recipient of the Hunan Province Outstanding Master's Thesis Award.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">2015 — 2020</div>
+            <div class="timeline-body">
+              <h3>Medical Degree in Clinical Medicine</h3>
+              <div class="place">Hunan University of Chinese Medicine · Changsha, China</div>
+              <p>Five-year clinical medicine program; the degree was evaluated by WES as a U.S. first professional degree in medicine.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Leadership & service</div>
+          <h2>Scientific community engagement.</h2>
+        </div>
+        <div class="service-grid">
+          <div class="service reveal"><strong>PCF Young Investigator Community</strong><span>Co-Leader, Tumorigenesis and Molecular Imaging & Theranostics Working Groups.</span></div>
+          <div class="service reveal"><strong>Editorial Service</strong><span>Editorial roles across oncology, immunology, pharmaceutical science, and translational medicine journals.</span></div>
+          <div class="service reveal"><strong>Peer Review</strong><span>70+ manuscript reviews across oncology, immunology, computational medicine, and bioinformatics.</span></div>
+          <div class="service reveal"><strong>Presentations</strong><span>AUA and ASCO abstracts, invited scientific presentations, and Prostate Cancer Foundation research activities.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="contact">
+      <div class="container">
+        <div class="contact-shell reveal">
+          <div>
+            <div class="eyebrow">Contact</div>
+            <h2>Interested in translational cancer research and collaboration?</h2>
+            <p>
+              I welcome conversations around urologic oncology, urothelial cancer, tumor immunology, CAR-T biology, functional genomics, single-cell & spatial multi-omics, AI-enabled biomedical research, and precision oncology.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="contact-link" href="mailto:Xingyu.Chen@cshs.org"><span>Xingyu.Chen@cshs.org</span><span>Email ↗</span></a>
+            <a class="contact-link" href="https://scholar.google.com/citations?user=Vj8vClIAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener"><span>Google Scholar</span><span>Profile ↗</span></a>
+            <a class="contact-link" href="https://orcid.org/0000-0002-9284-4950" target="_blank" rel="noopener"><span>ORCID · 0000-0002-9284-4950</span><span>Profile ↗</span></a>
+            <a class="contact-link" href="https://github.com/XingyuChen-MD" target="_blank" rel="noopener"><span>GitHub · XingyuChen-MD</span><span>Profile ↗</span></a>
+            <a class="contact-link" href="https://x.com/Xingyu_Chen_" target="_blank" rel="noopener"><span>X / Twitter · @Xingyu_Chen_</span><span>Profile ↗</span></a>
+            <a class="contact-link" href="docs/Xingyu_Chen_CV.pdf" target="_blank" rel="noopener"><span>Academic CV</span><span>PDF ↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Xingyu Chen, MD, MSc. · Scholar metrics updated Aug 2026</div>
+      <div>Physician-Scientist · Urologic Oncology & Translational Cancer Research</div>
+    </div>
+  </footer>
+
+  <script>
+    const navWrap = document.getElementById('navWrap');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    const onScroll = () => navWrap.classList.toggle('scrolled', window.scrollY > 34);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
 </html>
-
-
-
