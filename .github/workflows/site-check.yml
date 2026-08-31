@@ -1,0 +1,72 @@
+name: Site check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-site-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify required public files
+        run: |
+          test -f index.html
+          test -f CNAME
+          test -f robots.txt
+          test -f sitemap.xml
+          test -d images
+          test -d docs
+          grep -qx "xingyuchen.org" CNAME
+
+      - name: Check local links and assets
+        run: |
+          python3 <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlparse, unquote
+
+          root = Path.cwd()
+          html = (root / "index.html").read_text(encoding="utf-8")
+          missing = []
+
+          class LinkParser(HTMLParser):
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  for key in ("href", "src", "poster"):
+                      value = attrs.get(key)
+                      if not value:
+                          continue
+                      parsed = urlparse(value)
+                      if parsed.scheme or value.startswith(("#", "mailto:", "tel:", "javascript:")):
+                          continue
+                      path = unquote(parsed.path).lstrip("/")
+                      if not path:
+                          continue
+                      target = root / path
+                      if not target.exists():
+                          missing.append(value)
+
+          LinkParser().feed(html)
+
+          if missing:
+              print("Missing local links/assets:")
+              for item in sorted(set(missing)):
+                  print(f"- {item}")
+              raise SystemExit(1)
+
+          print("All local links and assets referenced by index.html exist.")
+          PY
+
+      - name: Check sitemap domain
+        run: |
+          grep -q "https://xingyuchen.org" sitemap.xml
