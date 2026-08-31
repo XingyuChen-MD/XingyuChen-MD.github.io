@@ -49,3 +49,8 @@ When updating the website:
 For publications, collaboration, and contact information, visit:
 
 https://xingyuchen.org/
+
+## Research Identifiers
+
+- Google Scholar: https://scholar.google.com/citations?user=Vj8vClIAAAAJ
+- ORCID: https://orcid.org/0000-0002-9284-4950
