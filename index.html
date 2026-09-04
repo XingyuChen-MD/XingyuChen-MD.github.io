@@ -30,6 +30,7 @@
       --blue: #1d5c84;
       --blue-dark: #123e5c;
       --blue-soft: #edf4f8;
+      --blue-pale: #f4f8fb;
       --line: #d8e1e6;
       --paper: #ffffff;
       --soft: #f7f9fa;
@@ -71,17 +72,19 @@
     .nav-cv { padding-left: 24px; border-left: 1px solid var(--line); }
     .menu { display: none; padding: 8px; color: var(--ink); border: 0; background: transparent; cursor: pointer; }
 
-    .hero { padding: 64px 0 68px; border-bottom: 1px solid var(--line); }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: clamp(52px, 7vw, 88px); align-items: start; }
+    .hero { padding: 68px 0 72px; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, #fff 0%, #fff 64%, #f4f8fb 100%); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 228px; gap: clamp(48px, 6vw, 76px); align-items: start; }
     .hero-label { margin: 0 0 18px; color: var(--blue); font-size: .78rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
     .hero h1 { max-width: 780px; margin: 0; color: var(--ink); font: 500 clamp(3.25rem, 5.2vw, 4.65rem)/1 var(--serif); letter-spacing: -.05em; }
-    .hero-role { margin: 21px 0 0; color: var(--ink); font-size: 1.18rem; font-weight: 600; }
+    .hero-role { margin: 21px 0 0; color: var(--blue-dark); font-size: 1.08rem; font-weight: 700; letter-spacing: .01em; }
     .hero-affiliation { margin: 4px 0 0; color: var(--muted); }
-    .hero-intro { max-width: 700px; margin: 25px 0 0; color: var(--body); font: 400 clamp(1.12rem, 1.7vw, 1.34rem)/1.5 var(--serif); }
+    .hero-intro { max-width: 700px; margin: 25px 0 0; padding-left: 19px; color: var(--body); border-left: 2px solid var(--blue); font: 400 clamp(1.12rem, 1.7vw, 1.34rem)/1.5 var(--serif); }
     .profile-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 24px 0 0; font-size: .86rem; font-weight: 600; }
     .profile-links a { display: inline-flex; align-items: center; gap: 5px; }
-    .portrait { margin: 0; }
-    .portrait img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 13%; border: 1px solid var(--line); filter: saturate(.86) contrast(.98); }
+    .portrait { position: relative; margin: 0 8px 0 0; }
+    .portrait::after { position: absolute; inset: 9px -9px -9px 9px; z-index: 0; border: 1px solid #a9c1d1; content: ""; }
+    .portrait img { position: relative; z-index: 1; width: 100%; height: 228px; object-fit: cover; object-position: 50% 25%; border: 1px solid var(--line); background: #d9e5ed; filter: saturate(.86) contrast(.98); }
+    .portrait figcaption { position: relative; z-index: 2; }
     .portrait figcaption { margin: 9px 0 0; color: var(--muted); font-size: .75rem; text-align: right; }
 
     .section { padding: 82px 0; border-bottom: 1px solid var(--line); }
@@ -95,7 +98,7 @@
     .overview-copy p { max-width: 690px; margin: 0 0 20px; }
     .overview-copy p:first-child { color: var(--ink); font: 400 1.35rem/1.48 var(--serif); }
     .method-line { margin: 31px 0 0; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--ink); font-size: .82rem; font-weight: 600; letter-spacing: .02em; }
-    .featured-paper { padding: 29px; border: 1px solid var(--line); background: var(--blue-soft); }
+    .featured-paper { position: relative; padding: 30px; border: 1px solid #c9d9e3; border-top: 4px solid var(--blue-dark); background: linear-gradient(145deg, #f5f9fb, #eaf2f6); box-shadow: 0 18px 44px rgba(19, 40, 58, .08); }
     .paper-meta { color: var(--blue); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
     .featured-paper h3 { margin: 14px 0 16px; color: var(--ink); font: 500 1.72rem/1.16 var(--serif); }
     .featured-paper p { margin: 0; color: var(--body); font-size: .9rem; }
@@ -111,7 +114,9 @@
     .area p { max-width: 610px; margin: 0; color: var(--muted); }
 
     .pub-list { border-top: 1px solid var(--line); }
-    .publication { display: grid; grid-template-columns: 72px minmax(0, 1fr) 135px; gap: 28px; padding: 27px 0; border-bottom: 1px solid var(--line); }
+    .publication { display: grid; grid-template-columns: 72px minmax(0, 1fr) 135px; gap: 28px; padding: 27px 18px; border-bottom: 1px solid var(--line); text-decoration: none; transition: background .18s ease, transform .18s ease; }
+    .publication:nth-child(-n+2) { background: linear-gradient(90deg, var(--blue-pale), transparent 78%); }
+    .publication:hover { color: inherit; background: var(--blue-soft); text-decoration: none; transform: translateX(4px); }
     .pub-year { color: var(--muted); font-size: .82rem; font-weight: 600; }
     .pub-title { color: var(--ink); font: 500 1.22rem/1.35 var(--serif); }
     .pub-journal { margin: 5px 0 0; color: var(--muted); font-size: .82rem; }
@@ -122,12 +127,14 @@
     .nature-shot { margin: 0; padding: 12px; border: 1px solid var(--line); background: #fff; box-shadow: 0 14px 36px rgba(19, 40, 58, .08); }
     .nature-shot img { width: 100%; height: auto; aspect-ratio: 591 / 255; object-fit: contain; }
     .nature-shot figcaption { margin: 9px 2px 0; color: var(--muted); font-size: .72rem; }
-    .news-copy h3 { margin: 0; color: var(--ink); font: 500 1.75rem/1.22 var(--serif); }
+    .news-copy h3 { margin: 0; color: var(--ink); font: 500 1.9rem/1.18 var(--serif); }
     .news-copy p { margin: 16px 0 0; color: var(--muted); }
     .news-copy .paper-links { margin-top: 19px; }
     .recognition-list { display: grid; gap: 0; margin: 30px 0 0; border-top: 1px solid var(--line); }
-    .recognition { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: .84rem; }
+    .recognition { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: .84rem; }
     .recognition strong { display: block; color: var(--ink); }
+    .recognition span { display: block; margin-top: 3px; color: var(--muted); }
+    .recognition a { display: inline-block; margin: 7px 12px 0 0; font-size: .76rem; font-weight: 600; }
 
     .background-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; }
     .background-copy p { margin: 0 0 20px; }
@@ -148,7 +155,8 @@
     .footer-inner { display: flex; justify-content: space-between; gap: 24px; }
 
     @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: minmax(0, 1fr) 230px; gap: 42px; }
+      .hero-grid { grid-template-columns: minmax(0, 1fr) 200px; gap: 38px; }
+      .portrait img { height: 200px; }
       .section-head { grid-template-columns: 210px minmax(0, 1fr); gap: 36px; }
       .overview-grid, .news-grid { gap: 38px; }
       .area { grid-template-columns: 46px 220px minmax(0, 1fr); gap: 24px; }
@@ -166,13 +174,14 @@
       .hero { padding: 48px 0 54px; }
       .hero-grid { grid-template-columns: 1fr; gap: 42px; }
       .hero h1 { font-size: clamp(3.25rem, 15vw, 4.8rem); }
-      .portrait { width: min(78%, 320px); }
+      .portrait { width: min(58%, 220px); }
+      .portrait img { height: auto; aspect-ratio: 1 / 1; }
       .section { padding: 62px 0; }
       .section-head, .overview-grid, .news-grid, .background-grid { grid-template-columns: 1fr; }
       .section-head { gap: 18px; margin-bottom: 36px; }
       .area { grid-template-columns: 38px minmax(0, 1fr); gap: 16px; }
       .area p { grid-column: 2; }
-      .publication { grid-template-columns: 54px minmax(0, 1fr); gap: 18px; }
+      .publication { grid-template-columns: 54px minmax(0, 1fr); gap: 18px; padding-right: 10px; padding-left: 10px; }
       .pub-role { grid-column: 2; text-align: left; }
       .contact-grid { grid-template-columns: 1fr; gap: 32px; }
       .contact-links { min-width: 0; }
@@ -225,9 +234,9 @@
         <div>
           <p class="hero-label">Academic profile</p>
           <h1>Xingyu Chen, MD, MSc</h1>
-          <p class="hero-role">Physician-Scientist in Computational &amp; Translational Oncology</p>
+        <p class="hero-role">Cancer Genomics · Tumor Immunology · Urologic Oncology</p>
           <p class="hero-affiliation">Research Bioinformatician · Cedars-Sinai Medical Center · Los Angeles, California</p>
-          <p class="hero-intro">My research examines how genomic alterations reshape tumor–immune ecosystems and influence cancer progression, treatment response, and patient outcome. Urologic oncology—particularly bladder and urothelial cancer—is the clinical anchor of this work.</p>
+        <p class="hero-intro">I study how genomic alterations—especially loss of the Y chromosome—reshape tumor–immune ecosystems, drive immune escape, and create opportunities for biomarkers and therapy. Bladder and urothelial cancer provide the clinical anchor; single-cell, spatial, and functional genomics provide the path to mechanism.</p>
           <div class="profile-links" aria-label="Academic profiles">
             <a href="mailto:Xingyu.Chen@cshs.org">Email <span aria-hidden="true">↗</span></a>
             <a href="https://scholar.google.com/citations?user=Vj8vClIAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
@@ -282,13 +291,13 @@
         </div>
         <div class="area-list">
           <article class="area">
-            <div class="area-no">01</div><h3>Tumor–immune co-evolution</h3><p>Defining how cancer-associated genomic alterations shape immune-cell states, systemic immunity, and clinical outcome across human tumors.</p>
+            <div class="area-no">01</div><h3>LOY &amp; tumor–immune co-evolution</h3><p>Defining how loss of the Y chromosome and related genomic alterations reshape cancer cells, T-cell states, systemic immunity, and patient outcome.</p>
           </article>
           <article class="area">
-            <div class="area-no">02</div><h3>Urologic oncology &amp; biomarkers</h3><p>Developing molecular and imaging-based approaches for staging, risk assessment, treatment response, and precision care in bladder and urothelial cancer.</p>
+            <div class="area-no">02</div><h3>Precision urologic oncology</h3><p>Developing genomic, immune, and AI radiogenomic approaches for staging, treatment-response prediction, and precision care in bladder and urothelial cancer.</p>
           </article>
           <article class="area">
-            <div class="area-no">03</div><h3>Functional cancer immunology</h3><p>Combining regulatory modeling, CRISPR-based perturbation, and single-cell analysis to study T-cell dysfunction and improve immune-cell therapies.</p>
+            <div class="area-no">03</div><h3>T-cell function &amp; CAR-T</h3><p>Combining patient-derived single-cell states, regulatory modeling, CRISPR perturbation, and functional genomics to identify causal regulators of immune-cell therapy.</p>
           </article>
         </div>
       </div>
@@ -337,8 +346,20 @@
             <p>The accompanying story discussed how Y-chromosome loss in tumors and immune cells may together influence cancer outcome.</p>
             <div class="paper-links"><a href="https://www.nature.com/articles/d41586-025-01656-1" target="_blank" rel="noopener">Read the coverage ↗</a></div>
             <div class="recognition-list">
-              <div class="recognition"><strong>U.S. Patent Application No. 2024/0360518</strong>AI radiogenomics for muscle-invasive bladder cancer</div>
-              <div class="recognition"><strong>Hunan Province Outstanding Master’s Thesis Award</strong>Graduate research recognition</div>
+              <div class="recognition">
+                <strong>2025 · A coordinated tumor–immune event</strong>
+                <span>Nature, Nature News &amp; Views, Nature Genetics and NIH highlighted the finding that concurrent Y-chromosome loss in cancer cells and T cells is associated with immune dysfunction and poor outcome.</span>
+                <a href="https://www.nature.com/articles/d41586-025-01450-z" target="_blank" rel="noopener">Nature News &amp; Views ↗</a>
+                <a href="https://www.nature.com/articles/s41588-025-02276-1" target="_blank" rel="noopener">Nature Genetics ↗</a>
+                <a href="https://www.nih.gov/news-events/nih-research-matters/y-chromosome-loss-plays-complex-role-cancers" target="_blank" rel="noopener">NIH Research Matters ↗</a>
+              </div>
+              <div class="recognition">
+                <strong>2023 · A mechanism of immune escape in bladder cancer</strong>
+                <span>Nature Reviews Cancer, NIH and the U.S. National Cancer Institute discussed the work as evidence that tumor-cell Y loss promotes T-cell exhaustion while identifying a potential marker of checkpoint-inhibitor response.</span>
+                <a href="https://www.nature.com/articles/s41568-023-00605-2" target="_blank" rel="noopener">Nature Reviews Cancer ↗</a>
+                <a href="https://www.nih.gov/news-events/nih-research-matters/y-chromosome-affects-cancer-growth" target="_blank" rel="noopener">NIH Research Matters ↗</a>
+                <a href="https://www.cancer.gov/news-events/cancer-currents-blog/2023/bladder-cancer-y-chromosome-men" target="_blank" rel="noopener">NCI Cancer Currents ↗</a>
+              </div>
             </div>
           </div>
         </div>
