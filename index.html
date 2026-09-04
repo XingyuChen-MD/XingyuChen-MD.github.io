@@ -104,7 +104,8 @@
     .paper-links { display: flex; flex-wrap: wrap; gap: 15px; margin: 22px 0 0; font-size: .82rem; font-weight: 600; }
     .research-figure { max-width: 980px; margin: 44px auto 0; }
     .research-figure img { width: 100%; height: auto; aspect-ratio: 2486 / 1095; object-fit: contain; border: 1px solid var(--line); background: #071017; }
-    .research-figure figcaption { display: flex; justify-content: space-between; gap: 22px; margin: 10px 0 0; color: var(--muted); font-size: .75rem; }
+    .research-figure figcaption { max-width: 900px; margin: 15px 0 0; color: var(--muted); font-size: .8rem; line-height: 1.6; }
+    .research-figure figcaption strong { display: block; margin-bottom: 3px; color: var(--ink); font: 500 1.02rem/1.35 var(--serif); }
 
     .area-list { border-top: 1px solid var(--line); }
     .area { display: grid; grid-template-columns: 58px 270px minmax(0, 1fr); gap: 32px; padding: 33px 0; border-bottom: 1px solid var(--line); }
@@ -122,18 +123,19 @@
     .pub-role { color: var(--blue); font-size: .7rem; font-weight: 700; letter-spacing: .07em; text-align: right; text-transform: uppercase; }
     .pub-footer { display: flex; justify-content: flex-end; margin: 26px 0 0; font-size: .85rem; font-weight: 600; }
 
-    .news-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr); gap: 58px; align-items: center; }
+    .news-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr); gap: 54px; align-items: center; }
     .nature-shot { margin: 0; padding: 12px; border: 1px solid var(--line); background: #fff; box-shadow: 0 14px 36px rgba(19, 40, 58, .08); }
     .nature-shot img { width: 100%; height: auto; aspect-ratio: 591 / 255; object-fit: contain; }
     .nature-shot figcaption { margin: 9px 2px 0; color: var(--muted); font-size: .72rem; }
-    .news-copy h3 { margin: 0; color: var(--ink); font: 500 1.9rem/1.18 var(--serif); }
+    .news-copy { padding-right: 16px; }
+    .news-copy h3 { margin: 0; color: var(--ink); font: 500 clamp(1.85rem, 3vw, 2.55rem)/1.12 var(--serif); letter-spacing: -.025em; }
     .news-copy p { margin: 16px 0 0; color: var(--muted); }
     .news-copy .paper-links { margin-top: 19px; }
-    .recognition-list { display: grid; gap: 0; margin: 30px 0 0; border-top: 1px solid var(--line); }
-    .recognition { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: .84rem; }
-    .recognition strong { display: block; color: var(--ink); }
-    .recognition span { display: block; margin-top: 3px; color: var(--muted); }
-    .recognition a { display: inline-block; margin: 7px 12px 0 0; font-size: .76rem; font-weight: 600; }
+    .recognition-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 38px 0 0; }
+    .recognition { min-height: 100%; padding: 25px 26px 23px; border: 1px solid var(--line); background: rgba(255,255,255,.78); font-size: .84rem; }
+    .recognition strong { display: block; color: var(--ink); font: 500 1.22rem/1.32 var(--serif); }
+    .recognition span { display: block; margin-top: 10px; color: var(--muted); }
+    .recognition a { display: inline-block; margin: 12px 14px 0 0; font-size: .76rem; font-weight: 600; }
 
     .background-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; }
     .background-copy p { margin: 0 0 20px; }
@@ -177,6 +179,8 @@
       .portrait img { height: auto; aspect-ratio: 1 / 1; }
       .section { padding: 62px 0; }
       .section-head, .overview-grid, .news-grid, .background-grid { grid-template-columns: 1fr; }
+      .news-copy { padding-right: 0; }
+      .recognition-list { grid-template-columns: 1fr; }
       .section-head { gap: 18px; margin-bottom: 36px; }
       .area { grid-template-columns: 38px minmax(0, 1fr); gap: 16px; }
       .area p { grid-column: 2; }
@@ -276,8 +280,8 @@
         </div>
 
         <figure class="research-figure">
-          <img src="images/tumor-immune-ecosystem.png" alt="Concept illustration for the 2025 Nature study on loss of the Y chromosome in cancer and T cells" width="2486" height="1095" loading="lazy" decoding="async">
-          <figcaption><span>Concept illustration for the 2025 <em>Nature</em> study.</span><span>Artwork: Xingyu Chen</span></figcaption>
+          <img src="images/tumor-immune-ecosystem.png?v=3" alt="Concept illustration of concurrent Y-chromosome loss across cancer cells and T cells" width="1881" height="836" loading="lazy" decoding="async">
+          <figcaption><strong>Concurrent Y-chromosome loss across the tumor–immune ecosystem</strong>Coral tumor cells and blue T cells contain fading Y-shaped chromosome silhouettes, representing loss of the Y chromosome in both compartments and its association with immune dysfunction and adverse clinical outcome.</figcaption>
         </figure>
       </div>
     </section>
@@ -344,7 +348,9 @@
             <h3>2025 LOY study featured on Nature’s homepage and covered by Nature News</h3>
             <p>The accompanying story discussed how Y-chromosome loss in tumors and immune cells may together influence cancer outcome.</p>
             <div class="paper-links"><a href="https://www.nature.com/articles/d41586-025-01656-1" target="_blank" rel="noopener">Read the coverage ↗</a></div>
-            <div class="recognition-list">
+          </div>
+        </div>
+        <div class="recognition-list">
               <div class="recognition">
                 <strong>2025 · A coordinated tumor–immune event</strong>
                 <span>Nature, Nature News &amp; Views, Nature Genetics and NIH highlighted the finding that concurrent Y-chromosome loss in cancer cells and T cells is associated with immune dysfunction and poor outcome.</span>
@@ -359,8 +365,6 @@
                 <a href="https://www.nih.gov/news-events/nih-research-matters/y-chromosome-affects-cancer-growth" target="_blank" rel="noopener">NIH Research Matters ↗</a>
                 <a href="https://www.cancer.gov/news-events/cancer-currents-blog/2023/bladder-cancer-y-chromosome-men" target="_blank" rel="noopener">NCI Cancer Currents ↗</a>
               </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
